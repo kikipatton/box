@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'client.apps.ClientConfig',
+    'accounts.apps.AccountsConfig',
 ]
 
 MIDDLEWARE = [
@@ -99,6 +100,9 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+LOGIN_REDIRECT_URL = 'login'  # Replace 'home' with your home page URL name
+LOGOUT_REDIRECT_URL = 'login'  # Replace 'home' with your home page URL name
 
 
 # Internationalization

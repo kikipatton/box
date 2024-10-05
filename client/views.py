@@ -1,7 +1,6 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView, ListView
+from django.views.generic import CreateView, ListView
 # Create your views here.
-from django.views.generic import CreateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
 from django.shortcuts import redirect

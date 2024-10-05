@@ -194,7 +194,7 @@
                     </li>
                     <li>
                       <div class="d-grid px-2 pt-2 pb-1">
-                        <a class="btn btn-sm btn-danger d-flex" href="javascript:void(0);">
+                        <a class="btn btn-sm btn-danger d-flex" href="{% url 'logout' %}">
                           <small class="align-middle">Logout</small>
                           <i class="ti ti-logout ms-2 ti-14px"></i>
                         </a>
@@ -228,7 +228,7 @@
                   <li class="menu-item active">
                     <a href="{% url 'clientadd' %}" class="menu-link">
                       <i class="menu-icon tf-icons ti ti-app-window"></i>
-                      <div data-i18n="Page 2">Page 2</div>
+                      <div data-i18n="Client">Client</div>
                     </a>
                   </li>
                 </ul>
@@ -328,6 +328,13 @@
                           <div class="mb-4 col-md-6">
                             <label for="id_city" class="form-label">City</label>
                             <input class="form-control" type="text" id="id_city" name="city" placeholder="Nairobi" />
+                          </div>
+                          <div class="mb-4 col-md-6">
+                              <label for="id_status" class="form-label">Status</label>
+                              <select id="id_status" name="status" class="select2 form-select">
+                                  <option value="Active" {% if form.status.value == 'Active' %}selected{% endif %}>Active</option>
+                                  <option value="Inactive" {% if form.status.value == 'Inactive' %}selected{% endif %}>Inactive</option>
+                              </select>
                           </div>
                         </div>
                         <div class="mt-2">

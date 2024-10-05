@@ -4,9 +4,10 @@ from .models import Client
 class ClientForm(forms.ModelForm):
     class Meta:
         model = Client
-        fields = ['first_name', 'last_name', 'email', 'organization', 'phone_number', 'address', 'city']
+        fields = ['first_name', 'last_name', 'email', 'organization', 'phone_number', 'address', 'city', 'status']
         widgets = {
             'first_name': forms.TextInput(attrs={'required': True}),
+            'last_name': forms.TextInput(attrs={'required': True}),
             'phone_number': forms.TextInput(attrs={'required': True}),
         }
 

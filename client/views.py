@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, ListView
 # Create your views here.
 from django.views.generic import CreateView
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -8,10 +8,34 @@ from django.shortcuts import redirect
 from django.utils import timezone
 from .models import Client
 from .forms import ClientForm
+from django.db.models import Count
 
-class ListView(TemplateView):
-    # Example of a function-based view
-    template_name = "client/clientlist.html"
+class ListView(LoginRequiredMixin, ListView):
+    model = Client
+    template_name = 'client/clientlist.html'
+    context_object_name = 'clients'
+    paginate_by = 10  # Adjust this value as needed
+
+    def get_queryset(self):
+        return Client.objects.filter(created_by=self.request.user).order_by('account_number')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        queryset = self.get_queryset()
+        
+        # Add counts to the context
+        context['clients_count'] = queryset.count()
+        status_counts = queryset.values('status').annotate(count=Count('status'))
+        
+        for status in status_counts:
+            context[f"{status['status'].lower()}_count"] = status['count']
+        
+        # Ensure all status counts are in the context, even if zero
+        for status in ['active', 'inactive', 'pending']:
+            if f"{status}_count" not in context:
+                context[f"{status}_count"] = 0
+
+        return context
     
 class AddView(LoginRequiredMixin, CreateView):
     model = Client

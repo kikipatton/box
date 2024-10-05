@@ -336,6 +336,15 @@
                         </div>
                       </form>
                     </div>
+                    {% if form.errors %}
+                    <div class="card-body">
+                      <div class="mb-6 col-12 mb-0">
+                        <div class="alert alert-danger">
+                          <p class="mb-0">Please fill all required fields</p>
+                        </div>
+                      </div>
+                    </div>
+                    {% endif %}
                     <!-- /Account -->
                   </div>
                   <div class="card">

@@ -108,7 +108,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-LOGIN_REDIRECT_URL = 'login'  # Replace 'home' with your home page URL name
+LOGIN_REDIRECT_URL = 'clientlist'  # Replace 'home' with your home page URL name
 LOGOUT_REDIRECT_URL = 'login'  # Replace 'home' with your home page URL name
 
 

@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import CreateView, ListView
+from django.views.generic import CreateView, ListView, DetailView
 # Create your views here.
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
@@ -8,12 +8,16 @@ from django.utils import timezone
 from .models import Client
 from .forms import ClientForm
 from django.db.models import Count
+from django.http import JsonResponse
+from django.contrib.auth.decorators import login_required
+
 
 class ListView(LoginRequiredMixin, ListView):
     model = Client
     template_name = 'client/clientlist.html'
     context_object_name = 'clients'
     paginate_by = 10  # Adjust this value as needed
+    
 
     def get_queryset(self):
         return Client.objects.filter(created_by=self.request.user).order_by('account_number')
@@ -36,6 +40,7 @@ class ListView(LoginRequiredMixin, ListView):
 
         return context
     
+    
 class AddView(LoginRequiredMixin, CreateView):
     model = Client
     form_class = ClientForm
@@ -57,3 +62,17 @@ class AddView(LoginRequiredMixin, CreateView):
     def form_invalid(self, form):
         messages.error(self.request, 'Client creation failed. Please check the form.')
         return super().form_invalid(form)
+    
+
+class ClientView(DetailView):
+    model = Client
+    template_name = 'client_detail.html'  # Create this template if it doesn't exist
+    context_object_name = 'client'
+    
+
+@login_required
+def client_list_json(request):
+    clients = Client.objects.filter(created_by=request.user).values(
+    'account_number', 'first_name', 'phone_number', 'email', 'status' , 'address'
+)
+    return JsonResponse(list(clients), safe=False)

@@ -328,47 +328,76 @@
               </div>
               <!-- Users List Table -->
               <div class="card">
-                <div class="card-header border-bottom">
-                  <h5 class="card-title mb-0">Filters</h5>
-                  <div class="d-flex justify-content-between align-items-center row pt-4 gap-4 gap-md-0">
-                    <div class="col-md-4 user_role"></div>
-                    <div class="col-md-4 user_plan"></div>
-                    <div class="col-md-4 user_status"></div>
+                <!-- Search Form -->
+                  <div class="card mb-4">
+                    <div class="card-body">
+                      <form class="row g-3" method="GET" action="{% url 'clientlist' %}">
+                        <div class="col-md-12">
+                          <label for="searchInput" class="form-label">Search Clients</label>
+                          <input type="text" class="form-control" id="searchInput" name="search" placeholder="Enter name, email, or account number" value="{{ request.GET.search }}">
+                        </div>
+                        <div class="col-md-4 d-flex align-items-end">
+                          <button type="submit" class="btn btn-primary me-2">Search</button>
+                          <a href="{% url 'clientlist' %}" class="btn btn-secondary">Clear</a>
+                        </div>
+                      </form>
+                    </div>
                   </div>
-                </div>
                 <div class="card-datatable table-responsive pt-0">
-                  <table class="datatables-basic table">
-                    <thead>
-                      <tr>
-                        <th>Account</th>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Phone</th>
-                        <th>Status</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                        {% for client in clients %}
-                        <tr>
-                            <td>{{ client.account_number }}</td>
-                            <td>{{ client.first_name }} {{ client.last_name }}</td>
-                            <td>{{ client.email }}</td>
-                            <td>{{ client.phone_number }}</td>
-                            <td>{{ client.status}}</td>
-                            <td>
-                              <a href="{% url 'clientview' pk=client.pk %}" class="btn btn-sm btn-primary">View Details</a>
-                            </td>
-                        </tr>
-                        {% empty %}
-                        <tr>
-                            <td colspan="6">No clients found.</td>
-                        </tr>
-                        {% endfor %}
-                    </tbody>
-                  </table>
+                <table class="datatables-basic table">
+                  <thead>
+                    <tr>
+                      <th>Account</th>
+                      <th>Name</th>
+                      <th class="d-none d-md-table-cell">Email</th>
+                      <th class="d-none d-md-table-cell">Phone</th>
+                      <th class="d-none d-md-table-cell">Status</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for client in clients %}
+                    <tr>
+                      <td>{{ client.account_number }}</td>
+                      <td>{{ client.first_name }} {{ client.last_name }}</td>
+                      <td class="d-none d-md-table-cell">{{ client.email }}</td>
+                      <td class="d-none d-md-table-cell">{{ client.phone_number }}</td>
+                      <td class="d-none d-md-table-cell">{{ client.status }}</td>
+                      <td>
+                        <div class="d-flex align-items-center">
+                          <a href="{% url 'clientview' pk=client.pk %}" class="btn btn-sm btn-primary me-2">View</a>
+                          <div class="dropdown d-inline-block d-md-none">
+                            <button class="btn btn-sm btn-icon dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                              <i class="ti ti-dots-vertical"></i>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end">
+                              <a href="javascript:void(0);" class="dropdown-item">
+                                <i class="ti ti-mail ti-xs me-1"></i>
+                                <span>{{ client.email }}</span>
+                              </a>
+                              <a href="javascript:void(0);" class="dropdown-item">
+                                <i class="ti ti-phone ti-xs me-1"></i>
+                                <span>{{ client.phone_number }}</span>
+                              </a>
+                              <a href="javascript:void(0);" class="dropdown-item">
+                                <i class="ti ti-circle ti-xs me-1"></i>
+                                <span>{{ client.status }}</span>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                      <td colspan="6">No clients found.</td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </div>
                 </div>
-           </div>
-            <!-- Pagination -->
+                <!-- Pagination -->
                 <div class="pagination col-md-4">
                   <span class="step-links">
                     {% if page_obj.has_previous %}

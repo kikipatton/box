@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.urls import reverse 
 from django.views.generic import CreateView, ListView, DetailView
 # Create your views here.
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -7,7 +7,7 @@ from django.shortcuts import redirect
 from django.utils import timezone
 from .models import Client
 from .forms import ClientForm
-from django.db.models import Count
+from django.db.models import Count, Q
 from django.http import JsonResponse
 from django.contrib.auth.decorators import login_required
 
@@ -20,7 +20,16 @@ class ListView(LoginRequiredMixin, ListView):
     
 
     def get_queryset(self):
-        return Client.objects.filter(created_by=self.request.user).order_by('account_number')
+        queryset = super().get_queryset()
+        search_query = self.request.GET.get('search')
+        if search_query:
+            queryset = queryset.filter(
+                Q(first_name__icontains=search_query) |
+                Q(last_name__icontains=search_query) |
+                Q(email__icontains=search_query) |
+                Q(account_number__icontains=search_query)
+            )
+        return queryset
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -66,8 +75,16 @@ class AddView(LoginRequiredMixin, CreateView):
 
 class ClientView(DetailView):
     model = Client
-    template_name = 'client_detail.html'  # Create this template if it doesn't exist
+    template_name = 'client/clientaccount.html'
     context_object_name = 'client'
+    
+    def post(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        form = ClientForm(request.POST, instance=self.object)
+        if form.is_valid():
+            form.save()
+            return redirect(reverse('clientview', kwargs={'pk': self.object.pk}))
+        return self.render_to_response(self.get_context_data(form=form))
     
 
 @login_required

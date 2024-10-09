@@ -159,10 +159,7 @@
                             </div>
                           </div>
                           <div class="flex-grow-1">
-                            {% if user.is_authenticated %}
-                            <h6 class="mb-0">{{ user.username }}</h6>
-                            {% else %}
-                            {% endif %}
+                            <h6 class="mb-0">John Doe</h6>
                             <small class="text-muted">Admin</small>
                           </div>
                         </div>
@@ -212,6 +209,7 @@
         </nav>
 
         <!-- / Navbar -->
+
         <!-- Layout container -->
         <div class="layout-page">
           <!-- Content wrapper -->
@@ -221,7 +219,7 @@
               <div class="container-xxl d-flex h-100">
                 <ul class="menu-inner py-1">
                   <!-- Page -->
-                  <li class="menu-item active">
+                  <li class="menu-item">
                     <a href="{% url 'clientlist' %}" class="menu-link">
                       <i class="menu-icon tf-icons ti ti-smart-home"></i>
                       <div data-i18n="Dashboard">Dashboard</div>
@@ -233,195 +231,131 @@
                       <div data-i18n="Client">Client</div>
                     </a>
                   </li>
-                  <li class="menu-item">
-                    <a href="{% url 'networklist' %}" class="menu-link">
+                  <li class="menu-item active">
+                    <a href="{% url 'networklist' %}" class="menu-link menu-toggle">
                       <i class="menu-icon tf-icons ti ti-app-window"></i>
                       <div data-i18n="Network">Network</div>
                     </a>
+                    <ul class="menu-sub">
+                        <li class="menu-item">
+                            <a href="{% url 'networklist' %}" class="menu-link">
+                            <i class="menu-icon tf-icons ti ti-app-window"></i>
+                            <div data-i18n="List">List</div>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="{% url 'router_create' %}" class="menu-link">
+                            <i class="menu-icon tf-icons ti ti-layout-grid-add"></i>
+                            <div data-i18n="Add Router">Add Router</div>
+                            </a>
+                        </li>
+                        <li class="menu-item active">
+                            <a href="{% url 'ip_pool_create' %}" class="menu-link">
+                            <i class="menu-icon tf-icons ti ti-layout-grid-add"></i>
+                            <div data-i18n="Add Pool">Add Pool</div>
+                            </a>
+                        </li>
+                    </ul>
                   </li>
                 </ul>
               </div>
             </aside>
             <!-- / Menu -->
-          <!-- Content -->
 
+             <!-- Content -->
             <div class="container-xxl flex-grow-1 container-p-y">
-              <div class="row g-6 mb-6">
-                <div class="col-sm-6 col-xl-3">
-                  <div class="card">
-                    <div class="card-body">
-                      <div class="d-flex align-items-start justify-content-between">
-                        <div class="content-left">
-                          <span class="text-heading">Total Users</span>
-                          <div class="d-flex align-items-center my-1">
-                            <h4 class="mb-0 me-2">{{ clients_count }}</h4>
-                            <p class="text-success mb-0">(+29%)</p>
-                          </div>
-                          <small class="mb-0">Total Users</small>
-                        </div>
-                        <div class="avatar">
-                          <span class="avatar-initial rounded bg-label-primary">
-                            <i class="ti ti-users ti-26px"></i>
-                          </span>
-                        </div>
-                      </div>
-                    </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="nav-align-top">
+                    <ul class="nav nav-pills flex-column flex-md-row mb-6 gap-2 gap-lg-0">
+                      <li class="nav-item">
+                        <a class="nav-link active" href="javascript:void(0);"
+                          ><i class="ti-sm ti ti-app-window me-1_5"></i> IP Pool</a
+                        >
+                      </li>
+                <!--      <li class="nav-item">
+                        <a class="nav-link" href="pages-account-settings-security.html"
+                          ><i class="ti-sm ti ti-lock me-1_5"></i> Security</a
+                        >
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="pages-account-settings-billing.html"
+                          ><i class="ti-sm ti ti-bookmark me-1_5"></i> Billing & Plans</a
+                        >
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="pages-account-settings-notifications.html"
+                          ><i class="ti-sm ti ti-bell me-1_5"></i> Notifications</a
+                        >
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="pages-account-settings-connections.html"
+                          ><i class="ti-sm ti ti-link me-1_5"></i> Connections</a
+                        >
+                      </li>-->
+                    </ul>
                   </div>
-                </div>
-                <div class="col-sm-6 col-xl-3">
-                  <div class="card">
-                    <div class="card-body">
-                      <div class="d-flex align-items-start justify-content-between">
-                        <div class="content-left">
-                          <span class="text-heading">Active Clients</span>
-                          <div class="d-flex align-items-center my-1">
-                            <h4 class="mb-0 me-2">{{ active_count }}</h4>
-                            <p class="text-success mb-0">(+18%)</p>
+                  <div class="card mb-6">
+                    <!-- Account -->
+                    <div class="card-body pt-4">
+                      <form id="formAccountSettings" method="POST" action="{% url 'router_create' %}">
+                        {% csrf_token %}
+                        <div class="row">
+                          <div class="mb-4 col-md-6">
+                            <label for="id_first_name" class="form-label">Name</label>
+                            <input
+                              class="form-control"
+                              type="text"
+                              id="id_first_name"
+                              name="first_name"
+                              placeholder="John"
+                              required
+                              autofocus />
                           </div>
-                          <small class="mb-0">Last week analytics </small>
-                        </div>
-                        <div class="avatar">
-                          <span class="avatar-initial rounded bg-label-danger">
-                            <i class="ti ti-user-plus ti-26px"></i>
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-6 col-xl-3">
-                  <div class="card">
-                    <div class="card-body">
-                      <div class="d-flex align-items-start justify-content-between">
-                        <div class="content-left">
-                          <span class="text-heading">Inactive Clients</span>
-                          <div class="d-flex align-items-center my-1">
-                            <h4 class="mb-0 me-2">{{ inactive_count }}</h4>
-                            <p class="text-danger mb-0">(-14%)</p>
+                          <div class="mb-4 col-md-6">
+                            <label for="id_last_name" class="form-label">IP Address</label>
+                            <input class="form-control" type="text" name="last_name" id="id_last_name" placeholder="127.0.0.1" />
                           </div>
-                          <small class="mb-0">Last week analytics</small>
-                        </div>
-                        <div class="avatar">
-                          <span class="avatar-initial rounded bg-label-success">
-                            <i class="ti ti-user-check ti-26px"></i>
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-6 col-xl-3">
-                  <div class="card">
-                    <div class="card-body">
-                      <div class="d-flex align-items-start justify-content-between">
-                        <div class="content-left">
-                          <span class="text-heading">Pending Users</span>
-                          <div class="d-flex align-items-center my-1">
-                            <h4 class="mb-0 me-2">237</h4>
-                            <p class="text-success mb-0">(+42%)</p>
+                          <div class="mb-4 col-md-6">
+                            <label for="id_last_name" class="form-label">Api Port</label>
+                            <input class="form-control" type="text" name="last_name" id="id_last_name" placeholder="8271" />
                           </div>
-                          <small class="mb-0">Last week analytics</small>
+                          <div class="mb-4 col-md-6">
+                            <label for="id_last_name" class="form-label">Username</label>
+                            <input class="form-control" type="text" name="last_name" id="id_last_name" placeholder="boxapi" />
+                          </div>
+                          <div class="mb-4 col-md-6">
+                            <label for="id_last_name" class="form-label">Password</label>
+                            <input class="form-control" type="text" name="last_name" id="id_last_name" placeholder="qwert11!@$" />
+                          </div>
+                          <div class="mb-4 col-md-6">
+                              <label for="id_status" class="form-label">Status</label>
+                              <select id="id_status" name="status" class="select2 form-select">
+                                  <option value="Active" {% if form.status.value == 'Active' %}selected{% endif %}>Active</option>
+                                  <option value="Inactive" {% if form.status.value == 'Inactive' %}selected{% endif %}>Inactive</option>
+                              </select>
+                          </div>
                         </div>
-                        <div class="avatar">
-                          <span class="avatar-initial rounded bg-label-warning">
-                            <i class="ti ti-user-search ti-26px"></i>
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- Users List Table -->
-              <div class="card">
-                <!-- Search Form -->
-                  <div class="card mb-4">
-                    <div class="card-body">
-                      <form class="row g-3" method="GET" action="{% url 'clientlist' %}">
-                        <div class="col-md-12">
-                          <label for="searchInput" class="form-label">Search Clients</label>
-                          <input type="text" class="form-control" id="searchInput" name="search" placeholder="Enter name, email, or account number" value="{{ request.GET.search }}">
-                        </div>
-                        <div class="col-md-4 d-flex align-items-end">
-                          <button type="submit" class="btn btn-primary me-2">Search</button>
-                          <a href="{% url 'clientlist' %}" class="btn btn-secondary">Clear</a>
+                        <div class="mt-2">
+                          <button type="submit" class="btn btn-primary me-3">Save changes</button>
+                          <button type="reset" class="btn btn-label-secondary">Cancel</button>
                         </div>
                       </form>
                     </div>
-                  </div>
-                <div class="card-datatable table-responsive pt-0">
-                <table class="datatables-basic table">
-                  <thead>
-                    <tr>
-                      <th>Account</th>
-                      <th>Name</th>
-                      <th class="d-none d-md-table-cell">Email</th>
-                      <th class="d-none d-md-table-cell">Phone</th>
-                      <th class="d-none d-md-table-cell">Status</th>
-                      <th>Action</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {% for client in clients %}
-                    <tr>
-                      <td>{{ client.account_number }}</td>
-                      <td>{{ client.first_name }} {{ client.last_name }}</td>
-                      <td class="d-none d-md-table-cell">{{ client.email }}</td>
-                      <td class="d-none d-md-table-cell">{{ client.phone_number }}</td>
-                      <td class="d-none d-md-table-cell">{{ client.status }}</td>
-                      <td>
-                        <div class="d-flex align-items-center">
-                          <a href="{% url 'clientview' pk=client.pk %}" class="btn btn-sm btn-primary me-2">View</a>
-                          <div class="dropdown d-inline-block d-md-none">
-                            <button class="btn btn-sm btn-icon dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                              <i class="ti ti-dots-vertical"></i>
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-end">
-                              <a href="javascript:void(0);" class="dropdown-item">
-                                <i class="ti ti-mail ti-xs me-1"></i>
-                                <span>{{ client.email }}</span>
-                              </a>
-                              <a href="javascript:void(0);" class="dropdown-item">
-                                <i class="ti ti-phone ti-xs me-1"></i>
-                                <span>{{ client.phone_number }}</span>
-                              </a>
-                              <a href="javascript:void(0);" class="dropdown-item">
-                                <i class="ti ti-circle ti-xs me-1"></i>
-                                <span>{{ client.status }}</span>
-                              </a>
-                            </div>
-                          </div>
+                    {% if form.errors %}
+                    <div class="card-body">
+                      <div class="mb-6 col-12 mb-0">
+                        <div class="alert alert-danger">
+                          <p class="mb-0">Please fill all required fields</p>
                         </div>
-                      </td>
-                    </tr>
-                    {% empty %}
-                    <tr>
-                      <td colspan="6">No clients found.</td>
-                    </tr>
-                    {% endfor %}
-                  </tbody>
-                </table>
-              </div>
-                </div>
-                <!-- Pagination -->
-                <div class="pagination col-md-4">
-                  <span class="step-links">
-                    {% if page_obj.has_previous %}
-                      <a href="?page=1">&laquo; first</a>
-                      <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+                      </div>
+                    </div>
                     {% endif %}
-
-                    <span class="current">
-                      Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
-                    </span>
-
-                    {% if page_obj.has_next %}
-                      <a href="?page={{ page_obj.next_page_number }}">next</a>
-                      <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
-                    {% endif %}
-                  </span>
+                    <!-- /Account -->
+                  </div>
                 </div>
               </div>
+            </div>
 
             <!--/ Content -->
 

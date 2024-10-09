@@ -226,9 +226,23 @@
                     </a>
                   </li>
                   <li class="menu-item active">
-                    <a href="{% url 'clientadd' %}" class="menu-link">
+                    <a href="{% url 'networklist' %}" class="menu-link menu-toggle">
                       <i class="menu-icon tf-icons ti ti-app-window"></i>
                       <div data-i18n="Client">Client</div>
+                    </a>
+                    <ul class="menu-sub">
+                        <li class="menu-item active">
+                            <a href="{% url 'clientadd' %}" class="menu-link">
+                            <i class="menu-icon tf-icons ti ti-app-window"></i>
+                            <div data-i18n="Add Client">Add Client</div>
+                            </a>
+                        </li>
+                    </ul>
+                  </li>
+                  <li class="menu-item">
+                    <a href="{% url 'networklist' %}" class="menu-link">
+                      <i class="menu-icon tf-icons ti ti-app-window"></i>
+                      <div data-i18n="Network">Network</div>
                     </a>
                   </li>
                 </ul>

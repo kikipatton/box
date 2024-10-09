@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'client.apps.ClientConfig',
     'service.apps.ServiceConfig',
+    'network.apps.NetworkConfig',
 ]
 
 MIDDLEWARE = [

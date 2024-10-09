@@ -250,7 +250,7 @@
                             </a>
                         </li>
                         <li class="menu-item active">
-                            <a href="{% url 'ip_pool_create' %}" class="menu-link">
+                            <a href="{% url 'pool_create' %}" class="menu-link">
                             <i class="menu-icon tf-icons ti ti-layout-grid-add"></i>
                             <div data-i18n="Add Pool">Add Pool</div>
                             </a>
@@ -298,42 +298,22 @@
                   <div class="card mb-6">
                     <!-- Account -->
                     <div class="card-body pt-4">
-                      <form id="formAccountSettings" method="POST" action="{% url 'router_create' %}">
+                      <form id="formAccountSettings" method="POST" action="{% url 'pool_create' %}">
                         {% csrf_token %}
                         <div class="row">
                           <div class="mb-4 col-md-6">
-                            <label for="id_first_name" class="form-label">Name</label>
+                            <label for="id_name" class="form-label">Name</label>
                             <input
                               class="form-control"
                               type="text"
-                              id="id_first_name"
-                              name="first_name"
-                              placeholder="John"
-                              required
+                              id="id_name"
+                              name="name"
+                              placeholder="100 Gbps"
                               autofocus />
                           </div>
                           <div class="mb-4 col-md-6">
-                            <label for="id_last_name" class="form-label">IP Address</label>
-                            <input class="form-control" type="text" name="last_name" id="id_last_name" placeholder="127.0.0.1" />
-                          </div>
-                          <div class="mb-4 col-md-6">
-                            <label for="id_last_name" class="form-label">Api Port</label>
-                            <input class="form-control" type="text" name="last_name" id="id_last_name" placeholder="8271" />
-                          </div>
-                          <div class="mb-4 col-md-6">
-                            <label for="id_last_name" class="form-label">Username</label>
-                            <input class="form-control" type="text" name="last_name" id="id_last_name" placeholder="boxapi" />
-                          </div>
-                          <div class="mb-4 col-md-6">
-                            <label for="id_last_name" class="form-label">Password</label>
-                            <input class="form-control" type="text" name="last_name" id="id_last_name" placeholder="qwert11!@$" />
-                          </div>
-                          <div class="mb-4 col-md-6">
-                              <label for="id_status" class="form-label">Status</label>
-                              <select id="id_status" name="status" class="select2 form-select">
-                                  <option value="Active" {% if form.status.value == 'Active' %}selected{% endif %}>Active</option>
-                                  <option value="Inactive" {% if form.status.value == 'Inactive' %}selected{% endif %}>Inactive</option>
-                              </select>
+                            <label for="id_description" class="form-label">Description</label>
+                            <input class="form-control" type="text" name="description" id="id_description" placeholder="" />
                           </div>
                         </div>
                         <div class="mt-2">
@@ -346,7 +326,7 @@
                     <div class="card-body">
                       <div class="mb-6 col-12 mb-0">
                         <div class="alert alert-danger">
-                          <p class="mb-0">Please fill all required fields</p>
+                          <p class="mb-0">Pool already exists</p>
                         </div>
                       </div>
                     </div>

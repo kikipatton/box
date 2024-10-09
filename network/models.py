@@ -2,7 +2,7 @@ from django.db import models
 from django.urls import reverse
 
 class Router(models.Model):
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100, unique=True)
     ip_address = models.GenericIPAddressField()
     username = models.CharField(max_length=50)
     password = models.CharField(max_length=50)
@@ -13,15 +13,14 @@ class Router(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse('router_detail', args=[str(self.id)])
+        return reverse('router_list', args=[str(self.id)])
 
 class IPPool(models.Model):
     name = models.CharField(max_length=100, unique=True)
-    router = models.ForeignKey(Router, on_delete=models.CASCADE)
     description = models.TextField(blank=True)
 
     def __str__(self):
-        return f"{self.name} on {self.router.name}"
+        return {self.name}
 
     def get_absolute_url(self):
-        return reverse('ip_pool_detail', args=[str(self.id)])
+        return reverse('networklist', args=[str(self.id)])

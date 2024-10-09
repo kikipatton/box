@@ -16,7 +16,7 @@ class ListView(LoginRequiredMixin, ListView):
     model = Client
     template_name = 'client/clientlist.html'
     context_object_name = 'clients'
-    paginate_by = 10  # Adjust this value as needed
+    paginate_by = 100  # Adjust this value as needed
     
 
     def get_queryset(self):

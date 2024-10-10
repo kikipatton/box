@@ -19,7 +19,7 @@ class TariffDetailView(DetailView):
 class TariffCreateView(CreateView):
     model = Tariff
     form_class = TariffForm
-    template_name = 'tariff_form.html'
+    template_name = 'tariff_create.html'
     success_url = reverse_lazy('Tariff_list')
 
 class TariffUpdateView(UpdateView):

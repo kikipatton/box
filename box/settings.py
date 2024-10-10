@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'client.apps.ClientConfig',
     'service.apps.ServiceConfig',
     'network.apps.NetworkConfig',
+    'tariff.apps.TariffConfig',
 ]
 
 MIDDLEWARE = [

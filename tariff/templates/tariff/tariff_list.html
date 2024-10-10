@@ -1,4 +1,4 @@
-{% extends 'network/base.html' %}
+{% extends 'tariff/base.html' %}
 {% load static %}
 
 {% block head %}
@@ -12,7 +12,7 @@
     <meta name="description" content="" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="{% static 'network/img/favicon/favicon.ico' %}" />
+    <link rel="icon" type="image/x-icon" href="{% static '/img/favicon/favicon.ico' %}" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -22,39 +22,39 @@
       rel="stylesheet" />
 
     <!-- Icons -->
-    <link rel="stylesheet" href="{% static 'network/vendor/fonts/fontawesome.css' %}" />
-    <link rel="stylesheet" href="{% static 'network/vendor/fonts/tabler-icons.css' %}" />
-    <link rel="stylesheet" href="{% static 'network/vendor/fonts/flag-icons.css' %}" />
+    <link rel="stylesheet" href="{% static '/vendor/fonts/fontawesome.css' %}" />
+    <link rel="stylesheet" href="{% static '/vendor/fonts/tabler-icons.css' %}" />
+    <link rel="stylesheet" href="{% static '/vendor/fonts/flag-icons.css' %}" />
 
     <!-- Core CSS -->
 
-    <link rel="stylesheet" href="{% static 'network/vendor/css/rtl/core.css' %}" class="template-customizer-core-css" />
-    <link rel="stylesheet" href="{% static 'network/vendor/css/rtl/theme-default.css' %}" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="{% static '/vendor/css/rtl/core.css' %}" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="{% static '/vendor/css/rtl/theme-default.css' %}" class="template-customizer-theme-css" />
 
-    <link rel="stylesheet" href="{% static 'network/css/demo.css' %}" />
+    <link rel="stylesheet" href="{% static '/css/demo.css' %}" />
 
     <!-- Vendors CSS -->
-    <link rel="stylesheet" href="{% static 'network/vendor/libs/node-waves/node-waves.css' %}" />
+    <link rel="stylesheet" href="{% static '/vendor/libs/node-waves/node-waves.css' %}" />
 
-    <link rel="stylesheet" href="{% static 'network/vendor/libs/perfect-scrollbar/perfect-scrollbar.css' %}" />
-    <link rel="stylesheet" href="{% static 'network/vendor/libs/typeahead-js/typeahead.css' %}" />
-    <link rel="stylesheet" href="{% static 'network/vendor/libs/datatables-bs5/datatables.bootstrap5.css' %}" />
-    <link rel="stylesheet" href="{% static 'network/vendor/libs/datatables-responsive-bs5/responsive.bootstrap5.css' %}" />
-    <link rel="stylesheet" href="{% static 'network/vendor/libs/datatables-buttons-bs5/buttons.bootstrap5.css' %}" />
-    <link rel="stylesheet" href="{% static 'network/vendor/libs/select2/select2.css' %}" />
-    <link rel="stylesheet" href="{% static 'network/vendor/libs/@form-validation/form-validation.css' %}" />
+    <link rel="stylesheet" href="{% static '/vendor/libs/perfect-scrollbar/perfect-scrollbar.css' %}" />
+    <link rel="stylesheet" href="{% static '/vendor/libs/typeahead-js/typeahead.css' %}" />
+    <link rel="stylesheet" href="{% static '/vendor/libs/datatables-bs5/datatables.bootstrap5.css' %}" />
+    <link rel="stylesheet" href="{% static '/vendor/libs/datatables-responsive-bs5/responsive.bootstrap5.css' %}" />
+    <link rel="stylesheet" href="{% static '/vendor/libs/datatables-buttons-bs5/buttons.bootstrap5.css' %}" />
+    <link rel="stylesheet" href="{% static '/vendor/libs/select2/select2.css' %}" />
+    <link rel="stylesheet" href="{% static '/vendor/libs/@form-validation/form-validation.css' %}" />
 
     <!-- Page CSS -->
 
     <!-- Helpers -->
-    <script src="{% static 'network/vendor/js/helpers.js' %}"></script>
+    <script src="{% static '/vendor/js/helpers.js' %}"></script>
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
 
     <!--? Template customizer: To hide customizer set displayCustomizer value false in config.js.  -->
-    <script src="{% static 'network/vendor/js/template-customizer.js' %}"></script>
+    <script src="{% static '/vendor/js/template-customizer.js' %}"></script>
 
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
-    <script src="{% static 'network/js/config.js' %}"></script>
+    <script src="{% static '/js/config.js' %}"></script>
 
 {% endblock %}
 
@@ -146,7 +146,7 @@
                     href="javascript:void(0);"
                     data-bs-toggle="dropdown">
                     <div class="avatar avatar-online">
-                      <img src="{% static 'network/img/avatars/1.png' %}" alt class="rounded-circle" />
+                      <img src="{% static '/img/avatars/1.png' %}" alt class="rounded-circle" />
                     </div>
                   </a>
                   <ul class="dropdown-menu dropdown-menu-end">
@@ -155,7 +155,7 @@
                         <div class="d-flex align-items-center">
                           <div class="flex-shrink-0 me-2">
                             <div class="avatar avatar-online">
-                              <img src="{% static 'network/img/avatars/1.png' %}" alt class="rounded-circle" />
+                              <img src="{% static '/img/avatars/1.png' %}" alt class="rounded-circle" />
                             </div>
                           </div>
                           <div class="flex-grow-1">
@@ -233,7 +233,7 @@
                       <div data-i18n="Client">Client</div>
                     </a>
                   </li>
-                  <li class="menu-item active">
+                  <li class="menu-item">
                     <a href="{% url 'networklist' %}" class="menu-link menu-toggle">
                       <i class="menu-icon tf-icons ti ti-app-window"></i>
                       <div data-i18n="Network">Network</div>
@@ -241,6 +241,26 @@
                     <ul class="menu-sub">
                         <li class="menu-item">
                             <a href="{% url 'networklist' %}" class="menu-link">
+                            <i class="menu-icon tf-icons ti ti-app-window"></i>
+                            <div data-i18n="List">List</div>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="{% url 'router_create' %}" class="menu-link">
+                            <i class="menu-icon tf-icons ti ti-layout-grid-add"></i>
+                            <div data-i18n="Add Router">Add Tariff</div>
+                            </a>
+                        </li>
+                    </ul>
+                  </li>
+                  <li class="menu-item active">
+                    <a href="{% url 'tariff_list' %}" class="menu-link menu-toggle">
+                      <i class="menu-icon tf-icons ti ti-app-window"></i>
+                      <div data-i18n="Tariff">Tariff</div>
+                    </a>
+                    <ul class="menu-sub">
+                        <li class="menu-item">
+                            <a href="{% url 'tariff_list' %}" class="menu-link">
                             <i class="menu-icon tf-icons ti ti-app-window"></i>
                             <div data-i18n="List">List</div>
                             </a>
@@ -259,26 +279,6 @@
                         </li>
                     </ul>
                   </li>
-                  <li class="menu-item">
-                    <a href="{% url 'tariff_list' %}" class="menu-link menu-toggle">
-                      <i class="menu-icon tf-icons ti ti-app-window"></i>
-                      <div data-i18n="Tariff">Tariff</div>
-                    </a>
-                    <ul class="menu-sub">
-                        <li class="menu-item">
-                            <a href="{% url 'tariff_list' %}" class="menu-link">
-                            <i class="menu-icon tf-icons ti ti-app-window"></i>
-                            <div data-i18n="List">List</div>
-                            </a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="{% url 'router_create' %}" class="menu-link">
-                            <i class="menu-icon tf-icons ti ti-layout-grid-add"></i>
-                            <div data-i18n="Add Tariff">Add Tariff</div>
-                            </a>
-                        </li>
-                    </ul>
-                  </li>
                 </ul>
               </div>
             </aside>
@@ -287,7 +287,7 @@
 
             <div class="container-xxl flex-grow-1 container-p-y">
               <div class="row g-6 mb-6">
-                <div class="col-sm-6 col-xl-6">
+                <div class="col-sm-12 col-xl-12">
                   <div class="card">
                     <div class="card-body">
                       <div class="d-flex align-items-start justify-content-between">
@@ -306,37 +306,18 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-sm-6 col-xl-6">
-                  <div class="card">
-                    <div class="card-body">
-                      <div class="d-flex align-items-start justify-content-between">
-                        <div class="content-left">
-                          <span class="text-heading">Total Pools</span>
-                          <div class="d-flex align-items-center my-1">
-                            <h4 class="mb-0 me-2">12</h4>
-                          </div>
-                        </div>
-                        <div class="avatar">
-                          <span class="avatar-initial rounded bg-label-danger">
-                            <i class="ti ti-user-plus ti-26px"></i>
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
               </div>
               <!-- Users List Table -->
             <!--Content-->
                 <div class="row">
                 <!-- Routers Card -->
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <div class="card">
                     <div class="card-header border-bottom">
-                        <h5 class="card-title mb-0">Routers</h5>
+                        <h5 class="card-title mb-0">Tariff Plans</h5>
                         <div class="d-flex justify-content-between align-items-center row pt-4 gap-4 gap-md-0">
-                        <div class="col-md-6 router_status"></div>
-                        <div class="col-md-6 router_type"></div>
+                        <div class="col-md-12 router_status"></div>
+                        <div class="col-md-12 router_type"></div>
                         </div>
                     </div>
                     <div class="card-datatable table-responsive">
@@ -344,61 +325,22 @@
                         <thead class="border-top">
                             <tr>
                             <th>Name</th>
-                            <th>IP Address</th>
-                            <th>Api Port</th>
-                            <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        {% for router in routers %}
-                            <tr>
-                            <td>{{ router.name }}</td>
-                            <td>{{ router.ip_address }}</td>
-                            <td>{{ router.api_port }}</td>
-                            <td>
-                                <a href="{% url 'router_detail' pk=router.pk %}" class="btn btn-sm btn-info">View</a>
-                                <form method="post" action="{% url 'router_delete' router.id %}" style="display: inline;">
-                                {% csrf_token %}
-                                <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this Router?')">Delete</button>
-                            </td>
-                            </tr>
-                        {% endfor %}
-                        </tbody>
-                        </table>
-                    </div>
-                    </div>
-                </div>
-
-                <!-- Pools Card -->
-                <div class="col-md-6">
-                    <div class="card">
-                    <div class="card-header border-bottom">
-                        <h5 class="card-title mb-0">IP Pools</h5>
-                        <div class="d-flex justify-content-between align-items-center row pt-4 gap-4 gap-md-0">
-                        <div class="col-md-6 pool_router"></div>
-                        <div class="col-md-6 pool_size"></div>
-                        </div>
-                    </div>
-                    <div class="card-datatable table-responsive">
-                        <table class="datatables-pools table">
-                        <thead class="border-top">
-                            <tr>
-                            <th>Name</th>
+                            <th>Price</th>
                             <th>Description</th>
                             <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
-                        {% for pool in ip_pools %}
+                        {% for tariff in tariffs %}
                             <tr>
-                            <td>{{ pool.name }}</td>
-                            <td>{{ pool.description }}</td>
+                            <td>{{ tariff.name }}</td>
+                            <td>{{ tariff.price }}</td>
+                            <td>{{ tariff.description }}</td>
                             <td>
-                                <a href="{% url 'ip_pool_detail' pool.id %}" class="btn btn-sm btn-info">View</a>
-                                <form method="post" action="{% url 'ip_pool_delete' pool.id %}" style="display: inline;">
+                                <a href="{% url 'router_detail' pk=router.pk %}" class="btn btn-sm btn-info">View</a>
+                                <form method="post" action="{% url 'router_delete' router.id %}" style="display: inline;">
                                 {% csrf_token %}
-                                <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this IP Pool?')">Delete</button>
-                            </form>
+                                <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this Router?')">Delete</button>
                             </td>
                             </tr>
                         {% endfor %}
@@ -459,31 +401,31 @@
 <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
 
-    <script src="{% static 'network/vendor/libs/jquery/jquery.js' %}"></script>
-    <script src="{% static 'network/vendor/libs/popper/popper.js' %}"></script>
-    <script src="{% static 'network/vendor/js/bootstrap.js' %}"></script>
-    <script src="{% static 'network/vendor/libs/node-waves/node-waves.js' %}"></script>
-    <script src="{% static 'network/vendor/libs/perfect-scrollbar/perfect-scrollbar.js' %}"></script>
-    <script src="{% static 'network/vendor/libs/hammer/hammer.js' %}"></script>
-    <script src="{% static 'network/vendor/libs/i18n/i18n.js' %}"></script>
-    <script src="{% static 'network/vendor/libs/typeahead-js/typeahead.js' %}"></script>
-    <script src="{% static 'network/vendor/js/menu.js' %}"></script>
+    <script src="{% static '/vendor/libs/jquery/jquery.js' %}"></script>
+    <script src="{% static '/vendor/libs/popper/popper.js' %}"></script>
+    <script src="{% static '/vendor/js/bootstrap.js' %}"></script>
+    <script src="{% static '/vendor/libs/node-waves/node-waves.js' %}"></script>
+    <script src="{% static '/vendor/libs/perfect-scrollbar/perfect-scrollbar.js' %}"></script>
+    <script src="{% static '/vendor/libs/hammer/hammer.js' %}"></script>
+    <script src="{% static '/vendor/libs/i18n/i18n.js' %}"></script>
+    <script src="{% static '/vendor/libs/typeahead-js/typeahead.js' %}"></script>
+    <script src="{% static '/vendor/js/menu.js' %}"></script>
 
     <!-- endbuild -->
 
     <!-- Vendors JS -->
-    <script src="{% static 'network/vendor/libs/moment/moment.js' %}"></script>
-    <script src="{% static 'network/vendor/libs/datatables-bs5/datatables-bootstrap5.js' %}"></script>
-    <script src="{% static 'network/vendor/libs/select2/select2.js' %}"></script>
-    <script src="{% static 'network/vendor/libs/@form-validation/popular.js' %}"></script>
-    <script src="{% static 'network/vendor/libs/@form-validation/bootstrap5.js' %}"></script>
-    <script src="{% static 'network/vendor/libs/@form-validation/auto-focus.js' %}"></script>
-    <script src="{% static 'network/vendor/libs/cleavejs/cleave.js' %}"></script>
-    <script src="{% static 'network/vendor/libs/cleavejs/cleave-phone.js' %}"></script>
+    <script src="{% static '/vendor/libs/moment/moment.js' %}"></script>
+    <script src="{% static '/vendor/libs/datatables-bs5/datatables-bootstrap5.js' %}"></script>
+    <script src="{% static '/vendor/libs/select2/select2.js' %}"></script>
+    <script src="{% static '/vendor/libs/@form-validation/popular.js' %}"></script>
+    <script src="{% static '/vendor/libs/@form-validation/bootstrap5.js' %}"></script>
+    <script src="{% static '/vendor/libs/@form-validation/auto-focus.js' %}"></script>
+    <script src="{% static '/vendor/libs/cleavejs/cleave.js' %}"></script>
+    <script src="{% static '/vendor/libs/cleavejs/cleave-phone.js' %}"></script>
 
     <!-- Main JS -->
-    <script src="{% static 'network/js/main.js' %}"></script>
+    <script src="{% static '/js/main.js' %}"></script>
 
     <!-- Page JS -->
-    <script src="{% static 'network/js/app-user-list.js' %}"></script>
+    <script src="{% static '/js/app-user-list.js' %}"></script>
 {% endblock %}

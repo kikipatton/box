@@ -289,7 +289,7 @@
                         </div>
                       </div>
                     </div>
-                    <h5 class="pb-4 border-bottom mb-4"><span class="badge bg-label-primary"">Router: {{ router.ip_address }}</span></h5>
+                    <h5 class="pb-4 border-bottom mb-4 text-center"><span class="badge bg-label-primary"">IPV4: {{ router.ip_address }}</span></h5>
                     <div class="info-container">
                       <form id="formRouterSettings" method="POST" action="{% url 'router_detail' pk=router.pk %}">
                       {% csrf_token %}
@@ -342,7 +342,8 @@
                             type="password" 
                             id="{{ form.password.id_for_label }}"
                             name="{{ form.password.html_name }}"
-                            placeholder="••••••••" />
+                            placeholder="••••••••"
+                            required />
                         </div>
                         <div class="mb-4 col-md-6">
                           <label for="{{ form.is_active.id_for_label }}" class="form-label">Status</label>

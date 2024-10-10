@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     'client.apps.ClientConfig',
     'service.apps.ServiceConfig',
     'network.apps.NetworkConfig',
-    'tariff.apps.TariffConfig',
+    'tariff.apps.TariffConfig'
 ]
 
 MIDDLEWARE = [
@@ -66,7 +66,7 @@ ROOT_URLCONF = 'box.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')], 
+        'DIRS': [os.path.join(BASE_DIR, 'tariff', 'templates')], 
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

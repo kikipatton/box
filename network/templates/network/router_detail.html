@@ -221,7 +221,7 @@
               <div class="container-xxl d-flex h-100">
                 <ul class="menu-inner py-1">
                   <!-- Page -->
-                  <li class="menu-item active">
+                  <li class="menu-item">
                     <a href="{% url 'clientlist' %}" class="menu-link">
                       <i class="menu-icon tf-icons ti ti-smart-home"></i>
                       <div data-i18n="Dashboard">Dashboard</div>
@@ -233,124 +233,149 @@
                       <div data-i18n="Client">Client</div>
                     </a>
                   </li>
+                  <li class="menu-item active">
+                    <a href="{% url 'networklist' %}" class="menu-link menu-toggle">
+                      <i class="menu-icon tf-icons ti ti-app-window"></i>
+                      <div data-i18n="Network">Network</div>
+                    </a>
+                    <ul class="menu-sub">
+                        <li class="menu-item">
+                            <a href="{% url 'networklist' %}" class="menu-link">
+                            <i class="menu-icon tf-icons ti ti-app-window"></i>
+                            <div data-i18n="List">List</div>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="{% url 'router_create' %}" class="menu-link">
+                            <i class="menu-icon tf-icons ti ti-layout-grid-add"></i>
+                            <div data-i18n="Add Router">Add Router</div>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="{% url 'pool_create' %}" class="menu-link">
+                            <i class="menu-icon tf-icons ti ti-layout-grid-add"></i>
+                            <div data-i18n="Add Pool">Add Pool</div>
+                            </a>
+                        </li>
+                    </ul>
+                  </li>
                 </ul>
               </div>
             </aside>
             <!-- / Menu -->
           <!-- Content -->
-          {% if messages %}
-            <div class="messages">
-                {% for message in messages %}
-                <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
-                    {{ message }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-                {% endfor %}
-            </div>
-            {% endif %}
-
             <div class="container-xxl flex-grow-1 container-p-y">
               <div class="row">
-                <!-- User Sidebar -->
-                <div class="col-xl-5 col-lg-6 order-1 order-md-0">
-                  <!-- User Card -->
+                <!-- Router Sidebar -->
+                <div class="col-xl-8 col-lg-8 order-1 order-md-0">
+                  <!-- Router Card -->
                   <div class="card mb-6">
                   <div class="card-body pt-12">
                     <div class="user-avatar-section">
                       <div class="d-flex align-items-center flex-column">
+                        {% if messages %}
+                    <div class="messages alert-dismissible">
+                        {% for message in messages %}
+                        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                            {{ message }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
                         <div class="user-info text-center">
-                          <h5>{{ client.first_name }} {{ client.last_name }}</h5>
-                          <span class="badge bg-label-secondary">{{ client.status }}</span>
+                          <h5>{{ router.name }}</h5>
+                          <span class="badge bg-label-secondary">{{ router.status }}</span>
                         </div>
                       </div>
                     </div>
-                    <h5 class="pb-4 border-bottom mb-4"><span class="badge bg-label-primary"">Account: {{ client.account_number }}</span></h5>
+                    <h5 class="pb-4 border-bottom mb-4"><span class="badge bg-label-primary"">Router: {{ router.ip_address }}</span></h5>
                     <div class="info-container">
-                      <form id="formAccountSettings" method="POST" action="{% url 'router_create' router.id %}">
-                        {% csrf_token %}
-                        <div class="row">
-                          <div class="mb-4 col-md-6">
-                            <label for="id_first_name" class="form-label">First Name</label>
-                            <input
-                              class="form-control"
-                              type="text"
-                              value="{{ client.first_name }}"
-                              name="first_name"
-                              placeholder="{{client.first_name}}"
-                              autofocus />
-                          </div>
-                          <div class="mb-4 col-md-6">
-                            <label for="id_last_name" class="form-label">Last Name</label>
-                            <input class="form-control" type="text" name="last_name" value="{{client.last_name}}" placeholder="{{client.last_name}}" />
-                          </div>
-                          <div class="mb-4 col-md-6">
-                            <label for="id_email" class="form-label">E-mail</label>
-                            <input
-                              class="form-control"
-                              type="email"
-                              value="{{ client.email }}"
-                              name="email"
-                              placeholder="{{client.email}}" />
-                          </div>
-                          <div class="mb-4 col-md-6">
-                            <label for="id_organization" class="form-label">Organization</label>
-                            <input
-                              type="text"
-                              class="form-control"
-                              value="{{ client.organization }}"
-                              name="organization"
-                              placeholder="{{client.organization}}" 
-                              />
-                          </div>
-                          <div class="mb-4 col-md-6">
-                            <label class="form-label" for="id_phone_number">Phone Number</label>
-                              <input
-                                type="text"
-                                value="{{client.phone_number}}"
-                                name="phone_number"
-                                class="form-control"
-                                placeholder="{{client.phone_number}}"
-                                />
-                          </div>
-                          <div class="mb-4 col-md-6">
-                            <label for="id_address" class="form-label">Address</label>
-                            <input type="text" class="form-control" value="{{client.address}}" name="address" placeholder="{{client.address}}" />
-                          </div>
-                          <div class="mb-4 col-md-6">
-                            <label for="id_city" class="form-label">City</label>
-                            <input class="form-control" type="text" value="{{client.city}}" name="city" placeholder="{{client.city}}" />
-                          </div>
-                          <div class="mb-4 col-md-6">
-                              <label for="id_status" class="form-label">Status</label>
-                              <select id="id_status" name="status" class="select2 form-select">
-                                  <option value="Active" {% if client.status == 'Active' %}selected{% endif %}>Active</option>
-                                  <option value="Inactive" {% if client.status == 'Inactive' %}selected{% endif %}>Inactive</option>
-                              </select>
-                          </div>
+                      <form id="formRouterSettings" method="POST" action="{% url 'router_detail' pk=router.pk %}">
+                      {% csrf_token %}
+                      <div class="row">
+                        <div class="mb-4 col-md-6">
+                          <label for="{{ form.name.id_for_label }}" class="form-label">Name</label>
+                          <input
+                            class="form-control"
+                            type="text"
+                            id="{{ form.name.id_for_label }}"
+                            name="{{ form.name.html_name }}"
+                            value="{{ form.name.value|default:'' }}"
+                            placeholder="{{ router.name }}"
+                            autofocus />
                         </div>
-                        <div class=" d-flex justify-content-center">
-                          <button type="submit" class="btn btn-primary me-3">Save changes</button>
+                        <div class="mb-4 col-md-6">
+                          <label for="{{ form.ip_address.id_for_label }}" class="form-label">IP Address</label>
+                          <input 
+                            class="form-control" 
+                            type="text" 
+                            id="{{ form.ip_address.id_for_label }}"
+                            name="{{ form.ip_address.html_name }}"
+                            value="{{ form.ip_address.value|default:'' }}"
+                            placeholder="{{ router.ip_address }}" />
                         </div>
-                      </form>
+                        <div class="mb-4 col-md-6">
+                          <label for="{{ form.api_port.id_for_label }}" class="form-label">API Port</label>
+                          <input 
+                            class="form-control" 
+                            type="number" 
+                            id="{{ form.api_port.id_for_label }}"
+                            name="{{ form.api_port.html_name }}"
+                            value="{{ form.api_port.value|default:'' }}"
+                            placeholder="{{ router.api_port }}" />
+                        </div>
+                        <div class="mb-4 col-md-6">
+                          <label for="{{ form.username.id_for_label }}" class="form-label">Username</label>
+                          <input 
+                            class="form-control" 
+                            type="text" 
+                            id="{{ form.username.id_for_label }}"
+                            name="{{ form.username.html_name }}"
+                            value="{{ form.username.value|default:'' }}"
+                            placeholder="{{ router.username }}" />
+                        </div>
+                        <div class="mb-4 col-md-6">
+                          <label for="{{ form.password.id_for_label }}" class="form-label">Password</label>
+                          <input 
+                            class="form-control" 
+                            type="password" 
+                            id="{{ form.password.id_for_label }}"
+                            name="{{ form.password.html_name }}"
+                            placeholder="••••••••" />
+                        </div>
+                        <div class="mb-4 col-md-6">
+                          <label for="{{ form.is_active.id_for_label }}" class="form-label">Status</label>
+                          <select id="{{ form.is_active.id_for_label }}" name="{{ form.is_active.html_name }}" class="select2 form-select">
+                            <option value="True" {% if router.is_active %}selected{% endif %}>Active</option>
+                            <option value="False" {% if not router.is_active %}selected{% endif %}>Inactive</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="d-flex justify-content-center">
+                        <button type="submit" class="btn btn-primary me-3">Save changes</button>
+                      </div>
+                    </form>
                     </div>
+                    
                   </div>
                 </div>
-                  <!-- /User Card -->
+                  <!-- /Router Card -->
                 </div>
-                <!--/ User Sidebar -->
+                <!--/ Router Sidebar -->
 
-                <!-- User Content -->
+                <!-- Router Content -->
                 <div class="col-xl-7 col-lg-6 order-0 order-md-1">
                   <!-- User Pills -->
                   <div class="nav-align-top">
                     <ul class="nav nav-pills flex-column flex-md-row flex-wrap mb-6 row-gap-2">
                       <li class="nav-item">
-                        <a class="nav-link active" href="{% url 'clientview' pk=client.pk %}"
-                          ><i class="ti ti-user-check ti-sm me-1_5"></i>Account</a
+                        <a class="nav-link active" href="{% url 'check_router_connection' pk=router.pk %}"
+                          ><i class="ti ti-user-check ti-sm me-1_5"></i>Check Connection</a
                         >
                       </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="{ url 'clientservice' pk=client.pk}"
+                 <!--     <li class="nav-item">
+                        <a class="nav-link" href="{ url }"
                           ><i class="ti ti-user-check ti-sm me-1_5"></i>Service</a
                         >
                       </li>
@@ -368,7 +393,7 @@
                         <a class="nav-link" href="app-user-view-notifications.html"
                           ><i class="ti ti-bell ti-sm me-1_5"></i>Notifications</a
                         >
-                      </li>
+                      </li>-->
                     </ul>
                   </div>
                   <!--/ User Pills -->

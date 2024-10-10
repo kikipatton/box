@@ -13,14 +13,14 @@ class Router(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse('router_list', args=[str(self.id)])
+        return reverse('router_detail', kwargs={'pk': self.pk})
 
 class IPPool(models.Model):
     name = models.CharField(max_length=100, unique=True)
     description = models.TextField(blank=True)
 
     def __str__(self):
-        return {self.name}
+        return self.name
 
     def get_absolute_url(self):
         return reverse('networklist', args=[str(self.id)])

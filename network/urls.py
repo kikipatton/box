@@ -8,6 +8,7 @@ urlpatterns = [
     path('routers/create/', views.RouterCreateView.as_view(), name='router_create'),
     path('routers/<int:pk>/', views.RouterDetailView.as_view(), name='router_detail'),
     path('routers/<int:pk>/delete/', views.RouterDeleteView.as_view(), name='router_delete'),
+    path('routers/<int:pk>/check-connection/', views.check_router_connection, name='check_router_connection'),
     
     path('ip-pools/create/', views.IPPoolCreateView.as_view(), name='pool_create'),
     path('ip-pools/<int:pk>/', views.IPPoolDetailView.as_view(), name='ip_pool_detail'),

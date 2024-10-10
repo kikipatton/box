@@ -338,9 +338,6 @@
                             <td>{{ tariff.description }}</td>
                             <td>
                                 <a href="{% url 'tariff_detail' pk=tariff.pk %}" class="btn btn-sm btn-info">View</a>
-                                <form method="post" action="{% url 'tariff_delete' tariff.id %}" style="display: inline;">
-                                {% csrf_token %}
-                                <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this Router?')">Delete</button>
                             </td>
                             </tr>
                         {% endfor %}

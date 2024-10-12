@@ -1,0 +1,553 @@
+Watching for file changes with StatReloader
+Not Found: /service/client/service/14/
+Not Found: /assets//img/icons/misc/pdf.png
+Not Found: /assets/img/avatars/1.png
+Not Found: /assets/img/avatars/5.png
+Not Found: /assets/img/avatars/12.png
+Not Found: /assets/img/avatars/6.png
+Not Found: /client/assets/img/avatars/1.png
+Not Found: /client/assets//img/icons/misc/pdf.png
+Not Found: /client/assets/img/avatars/6.png
+Not Found: /client/assets/img/avatars/12.png
+Not Found: /client/assets/img/avatars/5.png
+Received POST request for client John Kembo (Account: 14)
+Form is invalid for client John Kembo (Account: 14). Errors: <ul class="errorlist"><li>ip_pool<ul class="errorlist"><li>This field is required.</li></ul></li><li>username<ul class="errorlist"><li>This field is required.</li></ul></li><li>password<ul class="errorlist"><li>This field is required.</li></ul></li></ul>
+Not Found: /client/assets//img/icons/misc/pdf.png
+Not Found: /client/assets/img/avatars/1.png
+Not Found: /client/assets/img/avatars/6.png
+Not Found: /client/assets/img/avatars/12.png
+Not Found: /client/assets/img/avatars/5.png
+/home/box/service/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/box/service/models.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Not Found: /assets//img/icons/misc/pdf.png
+Not Found: /assets/img/avatars/5.png
+Not Found: /assets/img/avatars/1.png
+Not Found: /assets/img/avatars/12.png
+Not Found: /assets/img/avatars/6.png
+Not Found: /client/assets/img/avatars/1.png
+Not Found: /client/assets//img/icons/misc/pdf.png
+Not Found: /client/assets/img/avatars/5.png
+Not Found: /client/assets/img/avatars/12.png
+Not Found: /client/assets/img/avatars/6.png
+Not Found: /client/assets//img/icons/misc/pdf.png
+Not Found: /client/assets/img/avatars/1.png
+Not Found: /client/assets/img/avatars/12.png
+Not Found: /client/assets/img/avatars/6.png
+Not Found: /client/assets/img/avatars/5.png
+Not Found: /assets//img/icons/misc/pdf.png
+Not Found: /assets/img/avatars/1.png
+Not Found: /assets/img/avatars/6.png
+Not Found: /assets/img/avatars/12.png
+Not Found: /assets/img/avatars/5.png
+Not Found: /assets//img/icons/misc/pdf.png
+Not Found: /assets/img/avatars/1.png
+Not Found: /assets/img/avatars/6.png
+Not Found: /assets/img/avatars/12.png
+Not Found: /assets/img/avatars/5.png
+Not Found: /client/assets//img/icons/misc/pdf.png
+Not Found: /client/assets/img/avatars/1.png
+Not Found: /client/assets/img/avatars/6.png
+Not Found: /client/assets/img/avatars/5.png
+Not Found: /client/assets/img/avatars/12.png
+Not Found: /client/assets/img/avatars/1.png
+Not Found: /client/assets//img/icons/misc/pdf.png
+Not Found: /client/assets/img/avatars/5.png
+Not Found: /client/assets/img/avatars/12.png
+Not Found: /client/assets/img/avatars/6.png
+Not Found: /assets/img/avatars/1.png
+Not Found: /assets//img/icons/misc/pdf.png
+Not Found: /assets/img/avatars/12.png
+Not Found: /assets/img/avatars/5.png
+Not Found: /assets/img/avatars/6.png
+Not Found: /client/assets//img/icons/misc/pdf.png
+Not Found: /client/assets/img/avatars/1.png
+Not Found: /client/assets/img/avatars/5.png
+Not Found: /client/assets/img/avatars/6.png
+Not Found: /client/assets/img/avatars/12.png
+/home/box/service/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/box/service/models.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Not Found: /assets//img/icons/misc/pdf.png
+Not Found: /assets/img/avatars/1.png
+Not Found: /assets/img/avatars/5.png
+Not Found: /assets/img/avatars/6.png
+Not Found: /assets/img/avatars/12.png
+Not Found: /client/assets//img/icons/misc/pdf.png
+Not Found: /client/assets/img/avatars/1.png
+Not Found: /client/assets/img/avatars/5.png
+Not Found: /client/assets/img/avatars/6.png
+Not Found: /client/assets/img/avatars/12.png
+Not Found: /client/assets//img/icons/misc/pdf.png
+Not Found: /client/assets/img/avatars/1.png
+Not Found: /client/assets/img/avatars/6.png
+Not Found: /client/assets/img/avatars/12.png
+Not Found: /client/assets/img/avatars/5.png
+Not Found: /client/assets//img/icons/misc/pdf.png
+Not Found: /client/assets/img/avatars/1.png
+Not Found: /client/assets/img/avatars/5.png
+Not Found: /client/assets/img/avatars/6.png
+Not Found: /client/assets/img/avatars/12.png
+/home/box/service/forms.py changed, reloading.
+Watching for file changes with StatReloader
+/home/box/service/models.py changed, reloading.
+Watching for file changes with StatReloader
+/home/box/service/models.py changed, reloading.
+Watching for file changes with StatReloader
+/home/box/service/forms.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /assets//img/icons/misc/pdf.png
+Not Found: /assets/img/avatars/1.png
+Not Found: /assets/img/avatars/5.png
+Not Found: /assets/img/avatars/6.png
+Not Found: /assets/img/avatars/12.png
+Not Found: /client/assets/img/avatars/1.png
+Not Found: /client/assets//img/icons/misc/pdf.png
+Not Found: /client/assets/img/avatars/12.png
+Not Found: /client/assets/img/avatars/5.png
+Not Found: /client/assets/img/avatars/6.png
+Not Found: /client/assets//img/icons/misc/pdf.png
+Not Found: /client/assets/img/avatars/1.png
+Not Found: /client/assets/img/avatars/12.png
+Not Found: /client/assets/img/avatars/6.png
+Not Found: /client/assets/img/avatars/5.png
+Not Found: /assets//img/icons/misc/pdf.png
+Not Found: /assets/img/avatars/1.png
+Not Found: /assets/img/avatars/12.png
+Not Found: /assets/img/avatars/6.png
+Not Found: /assets/img/avatars/5.png
+Not Found: /client/assets//img/icons/misc/pdf.png
+Not Found: /client/assets/img/avatars/1.png
+Not Found: /client/assets/img/avatars/6.png
+Not Found: /client/assets/img/avatars/12.png
+Not Found: /client/assets/img/avatars/5.png
+Not Found: /client/assets//img/icons/misc/pdf.png
+Not Found: /client/assets/img/avatars/1.png
+Not Found: /client/assets/img/avatars/6.png
+Not Found: /client/assets/img/avatars/12.png
+Not Found: /client/assets/img/avatars/5.png
+Not Found: /client/assets//img/icons/misc/pdf.png
+Not Found: /client/assets/img/avatars/1.png
+Not Found: /client/assets/img/avatars/6.png
+Not Found: /client/assets/img/avatars/12.png
+Not Found: /client/assets/img/avatars/5.png
+/home/box/service/forms.py changed, reloading.
+Watching for file changes with StatReloader
+/home/box/service/views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /client/assets//img/icons/misc/pdf.png
+Not Found: /client/assets/img/avatars/1.png
+Not Found: /client/assets/img/avatars/5.png
+Not Found: /client/assets/img/avatars/12.png
+Not Found: /client/assets/img/avatars/6.png
+Not Found: /client/assets//img/icons/misc/pdf.png
+Not Found: /client/assets/img/avatars/1.png
+Not Found: /client/assets/img/avatars/12.png
+Not Found: /client/assets/img/avatars/5.png
+Not Found: /client/assets/img/avatars/6.png
+Not Found: /client/assets//img/icons/misc/pdf.png
+Not Found: /client/assets/img/avatars/5.png
+Not Found: /client/assets/img/avatars/1.png
+Not Found: /client/assets/img/avatars/12.png
+Not Found: /client/assets/img/avatars/6.png
+Not Found: /client/assets/img/avatars/1.png
+Not Found: /client/assets//img/icons/misc/pdf.png
+Not Found: /client/assets/img/avatars/5.png
+Not Found: /client/assets/img/avatars/12.png
+Not Found: /client/assets/img/avatars/6.png
+Not Found: /assets//img/icons/misc/pdf.png
+Not Found: /assets/img/avatars/5.png
+Not Found: /assets/img/avatars/1.png
+Not Found: /assets/img/avatars/6.png
+Not Found: /assets/img/avatars/12.png
+Not Found: /client/assets//img/icons/misc/pdf.png
+Not Found: /client/assets/img/avatars/1.png
+Not Found: /client/assets/img/avatars/5.png
+Not Found: /client/assets/img/avatars/12.png
+Not Found: /client/assets/img/avatars/6.png
+Not Found: /client/assets//img/icons/misc/pdf.png
+Not Found: /client/assets/img/avatars/1.png
+Not Found: /client/assets/img/avatars/6.png
+Not Found: /client/assets/img/avatars/12.png
+Not Found: /client/assets/img/avatars/5.png
+Not Found: /client/assets/img/avatars/1.png
+Not Found: /client/assets//img/icons/misc/pdf.png
+Not Found: /client/assets/img/avatars/5.png
+Not Found: /client/assets/img/avatars/12.png
+Not Found: /client/assets/img/avatars/6.png
+Not Found: /assets//img/icons/misc/pdf.png
+Not Found: /assets/img/avatars/1.png
+Not Found: /assets/img/avatars/6.png
+Not Found: /assets/img/avatars/12.png
+Not Found: /assets/img/avatars/5.png
+Not Found: /client/assets//img/icons/misc/pdf.png
+Not Found: /client/assets/img/avatars/1.png
+Not Found: /client/assets/img/avatars/12.png
+Not Found: /client/assets/img/avatars/5.png
+Not Found: /client/assets/img/avatars/6.png
+Not Found: /client/assets/img/avatars/1.png
+Not Found: /client/assets//img/icons/misc/pdf.png
+Not Found: /client/assets/img/avatars/6.png
+Not Found: /client/assets/img/avatars/12.png
+Not Found: /client/assets/img/avatars/5.png
+/home/box/service/forms.py changed, reloading.
+Watching for file changes with StatReloader
+/home/box/service/views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /assets//img/icons/misc/pdf.png
+Not Found: /assets/img/avatars/1.png
+Not Found: /assets/img/avatars/12.png
+Not Found: /assets/img/avatars/6.png
+Not Found: /assets/img/avatars/5.png
+Not Found: /client/assets/img/avatars/1.png
+Not Found: /client/assets//img/icons/misc/pdf.png
+Not Found: /client/assets/img/avatars/5.png
+Not Found: /client/assets/img/avatars/12.png
+Not Found: /client/assets/img/avatars/6.png
+<--- '/login'
+<--- '=name=test1'
+<--- '=password=test1'
+<--- EOS
+---> '!done'
+---> EOS
+Not Found: /client/assets//img/icons/misc/pdf.png
+Not Found: /client/assets/img/avatars/1.png
+Not Found: /client/assets/img/avatars/6.png
+Not Found: /client/assets/img/avatars/12.png
+Not Found: /client/assets/img/avatars/5.png
+Not Found: /favicon.ico
+Not Found: /client/assets//img/icons/misc/pdf.png
+Not Found: /client/assets/img/avatars/5.png
+Not Found: /client/assets/img/avatars/1.png
+Not Found: /client/assets/img/avatars/6.png
+Not Found: /client/assets/img/avatars/12.png
+Not Found: /client/assets/img/avatars/1.png
+Not Found: /client/assets//img/icons/misc/pdf.png
+Not Found: /client/assets/img/avatars/5.png
+Not Found: /client/assets/img/avatars/12.png
+Not Found: /client/assets/img/avatars/6.png
+Not Found: /client/assets/img/avatars/1.png
+Not Found: /client/assets//img/icons/misc/pdf.png
+Not Found: /client/assets/img/avatars/6.png
+Not Found: /client/assets/img/avatars/12.png
+Not Found: /client/assets/img/avatars/5.png
+Not Found: /client/assets//img/icons/misc/pdf.png
+Not Found: /client/assets/img/avatars/1.png
+Not Found: /client/assets/img/avatars/6.png
+Not Found: /client/assets/img/avatars/5.png
+Not Found: /client/assets/img/avatars/12.png
+Not Found: /client/assets//img/icons/misc/pdf.png
+Not Found: /client/assets/img/avatars/1.png
+Not Found: /client/assets/img/avatars/5.png
+Not Found: /client/assets/img/avatars/12.png
+Not Found: /client/assets/img/avatars/6.png
+Not Found: /client/assets//img/icons/misc/pdf.png
+Not Found: /client/assets/img/avatars/1.png
+Not Found: /client/assets/img/avatars/6.png
+Not Found: /client/assets/img/avatars/12.png
+Not Found: /client/assets/img/avatars/5.png
+Not Found: /client/assets//img/icons/misc/pdf.png
+Not Found: /client/assets/img/avatars/1.png
+Not Found: /client/assets/img/avatars/12.png
+Not Found: /client/assets/img/avatars/5.png
+Not Found: /client/assets/img/avatars/6.png
+Not Found: /client/assets//img/icons/misc/pdf.png
+Not Found: /client/assets/img/avatars/1.png
+Not Found: /client/assets/img/avatars/5.png
+Not Found: /client/assets/img/avatars/12.png
+Not Found: /client/assets/img/avatars/6.png
+Not Found: /client/assets//img/icons/misc/pdf.png
+Not Found: /client/assets/img/avatars/1.png
+Not Found: /client/assets/img/avatars/5.png
+Not Found: /client/assets/img/avatars/12.png
+Not Found: /client/assets/img/avatars/6.png
+Not Found: /client/assets/img/avatars/5.png
+Not Found: /client/assets/img/avatars/1.png
+Not Found: /client/assets/img/avatars/12.png
+Not Found: /client/assets//img/icons/misc/pdf.png
+Not Found: /client/assets/img/avatars/6.png
+/home/box/service/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/box/service/views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /client/assets//img/icons/misc/pdf.png
+Not Found: /client/assets/img/avatars/5.png
+Not Found: /client/assets/img/avatars/1.png
+Not Found: /client/assets/img/avatars/12.png
+Not Found: /client/assets/img/avatars/6.png
+Not Found: /client/assets/img/avatars/1.png
+Not Found: /client/assets//img/icons/misc/pdf.png
+Not Found: /client/assets/img/avatars/5.png
+Not Found: /client/assets/img/avatars/12.png
+Not Found: /client/assets/img/avatars/6.png
+<--- '/login'
+<--- '=name=test1'
+<--- '=password=test1'
+<--- EOS
+---> '!done'
+---> EOS
+Not Found: /client/assets/img/avatars/1.png
+Not Found: /client/assets//img/icons/misc/pdf.png
+Not Found: /client/assets/img/avatars/12.png
+Not Found: /client/assets/img/avatars/5.png
+Not Found: /client/assets/img/avatars/6.png
+Watching for file changes with StatReloader
+Not Found: /client/assets//img/icons/misc/pdf.png
+Not Found: /client/assets/img/avatars/1.png
+Not Found: /client/assets/img/avatars/5.png
+Not Found: /client/assets/img/avatars/12.png
+Not Found: /client/assets/img/avatars/6.png
+<--- '/login'
+<--- '=name=test1'
+<--- '=password=test1'
+<--- EOS
+---> '!done'
+---> EOS
+Not Found: /assets/img/avatars/1.png
+Not Found: /assets//img/icons/misc/pdf.png
+Not Found: /assets/img/avatars/5.png
+Not Found: /assets/img/avatars/6.png
+Not Found: /assets/img/avatars/12.png
+Not Found: /client/assets//img/icons/misc/pdf.png
+Not Found: /client/assets/img/avatars/1.png
+Not Found: /client/assets/img/avatars/12.png
+Not Found: /client/assets/img/avatars/5.png
+Not Found: /client/assets/img/avatars/6.png
+Not Found: /assets//img/icons/misc/pdf.png
+Not Found: /assets/img/avatars/1.png
+Not Found: /assets/img/avatars/5.png
+Not Found: /assets/img/avatars/6.png
+Not Found: /assets/img/avatars/12.png
+Not Found: /client/assets/img/avatars/1.png
+Not Found: /client/assets/img/avatars/6.png
+Not Found: /client/assets//img/icons/misc/pdf.png
+Not Found: /client/assets/img/avatars/12.png
+Not Found: /client/assets/img/avatars/5.png
+<--- '/login'
+<--- '=name=test1'
+<--- '=password=test1'
+<--- EOS
+---> '!done'
+---> EOS
+Not Found: /client/assets/img/avatars/12.png
+Not Found: /client/assets/img/avatars/5.png
+Not Found: /client/assets//img/icons/misc/pdf.png
+Not Found: /client/assets/img/avatars/1.png
+Not Found: /client/assets/img/avatars/6.png
+Watching for file changes with StatReloader
+/home/box/service/models.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /client/assets//img/icons/misc/pdf.png
+Not Found: /client/assets/img/avatars/5.png
+Not Found: /client/assets/img/avatars/1.png
+Not Found: /client/assets/img/avatars/12.png
+Not Found: /client/assets/img/avatars/6.png
+Not Found: /client/assets/img/avatars/1.png
+Not Found: /client/assets//img/icons/misc/pdf.png
+Not Found: /client/assets/img/avatars/5.png
+Not Found: /client/assets/img/avatars/6.png
+Not Found: /client/assets/img/avatars/12.png
+Not Found: /client/assets/img/avatars/1.png
+Not Found: /client/assets//img/icons/misc/pdf.png
+Not Found: /client/assets/img/avatars/5.png
+Not Found: /client/assets/img/avatars/6.png
+Not Found: /client/assets/img/avatars/12.png
+/home/box/service/models.py changed, reloading.
+Watching for file changes with StatReloader
+/home/box/service/models.py changed, reloading.
+Watching for file changes with StatReloader
+/home/box/service/models.py changed, reloading.
+Watching for file changes with StatReloader
+/home/box/service/models.py changed, reloading.
+Watching for file changes with StatReloader
+/home/box/service/models.py changed, reloading.
+Watching for file changes with StatReloader
+/home/box/service/models.py changed, reloading.
+Watching for file changes with StatReloader
+/home/box/service/models.py changed, reloading.
+Watching for file changes with StatReloader
+/home/box/service/models.py changed, reloading.
+Watching for file changes with StatReloader
+/home/box/service/models.py changed, reloading.
+Watching for file changes with StatReloader
+/home/box/service/models.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /assets//img/icons/misc/pdf.png
+Not Found: /assets/img/avatars/1.png
+Not Found: /assets/img/avatars/6.png
+Not Found: /assets/img/avatars/12.png
+Not Found: /assets/img/avatars/5.png
+Not Found: /client/assets//img/icons/misc/pdf.png
+Not Found: /client/assets/img/avatars/1.png
+Not Found: /client/assets/img/avatars/6.png
+Not Found: /client/assets/img/avatars/5.png
+Not Found: /client/assets/img/avatars/12.png
+Not Found: /client/assets//img/icons/misc/pdf.png
+Not Found: /client/assets/img/avatars/1.png
+Not Found: /client/assets/img/avatars/5.png
+Not Found: /client/assets/img/avatars/12.png
+Not Found: /client/assets/img/avatars/6.png
+Not Found: /client/assets//img/icons/misc/pdf.png
+Not Found: /client/assets/img/avatars/1.png
+Not Found: /client/assets/img/avatars/12.png
+Not Found: /client/assets/img/avatars/5.png
+Not Found: /client/assets/img/avatars/6.png
+/home/box/service/models.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+<--- '/login'
+<--- EOS
+---> '!done'
+---> '=ret=84e7fdb725165b62a8cf96bbda3aef7d'
+---> EOS
+<--- '/login'
+<--- '=name=kiki'
+<--- '=response=0059f501b5c9bf25268dd92a30d084810e'
+<--- EOS
+---> '!trap'
+---> '=message=invalid user name or password (6)'
+---> EOS
+---> '!done'
+---> EOS
+Not Found: /client/assets//img/icons/misc/pdf.png
+Not Found: /client/assets/img/avatars/12.png
+Not Found: /client/assets/img/avatars/1.png
+Not Found: /client/assets/img/avatars/6.png
+Not Found: /client/assets/img/avatars/5.png
+/home/box/service/models.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /client/assets//img/icons/misc/pdf.png
+Not Found: /client/assets/img/avatars/1.png
+Not Found: /client/assets/img/avatars/5.png
+Not Found: /client/assets/img/avatars/12.png
+Not Found: /client/assets/img/avatars/6.png
+<--- '/login'
+<--- EOS
+---> '!done'
+---> '=ret=cee9ba9fca990c3d9911978b0bc2af1e'
+---> EOS
+<--- '/login'
+<--- '=name=kiki'
+<--- '=response=00618cc8bf282cd14aab6b599813bfa7cc'
+<--- EOS
+---> '!trap'
+---> '=message=invalid user name or password (6)'
+---> EOS
+---> '!done'
+---> EOS
+Not Found: /client/assets/img/avatars/1.png
+Not Found: /client/assets//img/icons/misc/pdf.png
+Not Found: /client/assets/img/avatars/12.png
+Not Found: /client/assets/img/avatars/5.png
+Not Found: /client/assets/img/avatars/6.png
+<--- '/login'
+<--- EOS
+---> '!done'
+---> '=ret=621245a7f413681cd5ea4ba1acb224e8'
+---> EOS
+<--- '/login'
+<--- '=name=test1'
+<--- '=response=00a6418d4806d5e39995e834904fd26680'
+<--- EOS
+---> '!trap'
+---> '=message=invalid user name or password (6)'
+---> EOS
+---> '!done'
+---> EOS
+Not Found: /client/assets/img/avatars/1.png
+Not Found: /client/assets//img/icons/misc/pdf.png
+Not Found: /client/assets/img/avatars/5.png
+Not Found: /client/assets/img/avatars/6.png
+Not Found: /client/assets/img/avatars/12.png
+<--- '/login'
+<--- '=name=samir'
+<--- '=password=12345678'
+<--- EOS
+---> '!done'
+---> EOS
+<--- '/login'
+<--- '=name=samir'
+<--- '=password=12345678'
+<--- EOS
+---> '!done'
+---> EOS
+<--- '/login'
+<--- EOS
+---> '!done'
+---> '=ret=242731dd268d741e9a661fcee25019f4'
+---> EOS
+<--- '/login'
+<--- '=name=samir'
+<--- '=response=00882ef16193d33697c3bb1d20e1034b1d'
+<--- EOS
+---> '!trap'
+---> '=message=invalid user name or password (6)'
+---> EOS
+---> '!done'
+---> EOS
+Not Found: /client/assets//img/icons/misc/pdf.png
+Not Found: /client/assets/img/avatars/5.png
+Not Found: /client/assets/img/avatars/1.png
+Not Found: /client/assets/img/avatars/12.png
+Not Found: /client/assets/img/avatars/6.png
+/home/box/service/models.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /assets//img/icons/misc/pdf.png
+Not Found: /assets/img/avatars/1.png
+Not Found: /assets/img/avatars/5.png
+Not Found: /assets/img/avatars/12.png
+Not Found: /assets/img/avatars/6.png
+Not Found: /client/assets//img/icons/misc/pdf.png
+Not Found: /client/assets/img/avatars/1.png
+Not Found: /client/assets/img/avatars/5.png
+Not Found: /client/assets/img/avatars/12.png
+Not Found: /client/assets/img/avatars/6.png
+<--- '/login'
+<--- '=name=samir'
+<--- '=password=12345678'
+<--- EOS
+---> '!done'
+---> EOS
+<--- '/ppp/secret/add'
+<--- '=name=Crown'
+<--- '=password=Helloworld'
+<--- '=service=pppoe'
+<--- '=profile=10 Mbps'
+<--- '=remote_address=10 Mbps'
+<--- EOS
+---> '!trap'
+---> '=message=unknown parameter remote_address'
+---> EOS
+---> '!done'
+---> EOS
+Not Found: /client/assets/img/avatars/1.png
+Not Found: /client/assets//img/icons/misc/pdf.png
+Not Found: /client/assets/img/avatars/12.png
+Not Found: /client/assets/img/avatars/6.png
+Not Found: /client/assets/img/avatars/5.png
+/home/box/service/models.py changed, reloading.
+Watching for file changes with StatReloader
+<--- '/login'
+<--- '=name=samir'
+<--- '=password=12345678'
+<--- EOS
+---> '!done'
+---> EOS
+<--- '/ppp/secret/add'
+<--- '=name=Crown2024'
+<--- '=password=Helloworld'
+<--- '=service=pppoe'
+<--- '=profile=10 Mbps'
+<--- EOS
+---> '!done'
+---> '=ret=*5'
+---> EOS
+Not Found: /client/assets//img/icons/misc/pdf.png
+Not Found: /client/assets/img/avatars/1.png
+Not Found: /client/assets/img/avatars/5.png
+Not Found: /client/assets/img/avatars/12.png
+Not Found: /client/assets/img/avatars/6.png

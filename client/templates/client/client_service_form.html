@@ -448,22 +448,77 @@
                   <!--/ User Pills -->
 
                   <!-- Project table -->
+                    <!-- User Card -->
                   <div class="card mb-6">
-                    <div class="card-datatable table-responsive">
-                      <table class="datatables-projects table border-top">
-                        <thead>
-                          <tr>
-                            <th></th>
-                            <th></th>
-                            <th>Project</th>
-                            <th>Leader</th>
-                            <th>Team</th>
-                            <th class="w-px-200">Progress</th>
-                            <th>Action</th>
-                          </tr>
-                        </thead>
-                      </table>
+                  <div class="card-body pt-12">
+                    <div class="user-avatar-section">
+                      <div class="d-flex align-items-center flex-column">
+                        <div class="user-info text-center">
+                          <h5>{{ client.first_name }} {{ client.last_name }}</h5>
+                          <span class="badge bg-label-secondary">{{ client.status }}</span>
+                        </div>
+                      </div>
                     </div>
+                    <h5 class="pb-4 border-bottom mb-4"><span class="badge bg-label-primary"">Account: {{ client.account_number }}</span></h5>
+                    <div class="info-container">
+                      <form id="formAccountSettings" method="POST" action="{% url 'assign_service' pk=client.pk %}">
+                      {% csrf_token %}
+                      <div class="row">
+                        <div class="mb-4 col-md-12">
+                          <label for="id_tariff" class="form-label">Tariff</label>
+                          <select class="form-control" id="id_tariff" name="tariff">
+                            {% for tariff in tariffs %}
+                              <option value="{{ tariff.pk }}">{{ tariff.name }}</option>
+                            {% endfor %}
+                          </select>
+                        </div>
+                        <div class="mb-4 col-md-12">
+                          <label for="id_router" class="form-label">Router</label>
+                          <select class="form-control" id="id_router" name="router">
+                            {% for router in routers %}
+                              <option value="{{ router.pk }}" placeholder="{{router.name}}">{{ router.name }}</option>
+                            {% endfor %}
+                          </select>
+                        </div>
+                        <div class="mb-4 col-md-12">
+                          <label for="id_router" class="form-label">IP</label>
+                          <select class="form-control" id="id_pool" name="pool">
+                            {% for pool in ip_pools %}
+                              <option value="{{ pool.pk }}" placeholder="{{ pool.name}}">{{ pool.name }}</option>
+                            {% endfor %}
+                          </select>
+                        </div>
+                        <div class="mb-4 col-md-12">
+                          <label for="id_pppoe_username" class="form-label">PPPoE Username</label>
+                          <input
+                            class="form-control"
+                            type="text"
+                            id="id_pppoe_username"
+                            name="pppoe_username"
+                            placeholder="Enter PPPoE Username"
+                            required
+                          />
+                        </div>
+                        <div class="mb-4 col-md-12">
+                          <label for="id_pppoe_password" class="form-label">PPPoE Password</label>
+                          <input
+                            type="password"
+                            class="form-control"
+                            id="id_pppoe_password"
+                            name="pppoe_password"
+                            placeholder="Enter PPPoE Password"
+                            required
+                          />
+                        </div>
+                      </div>
+                      <div class="d-flex justify-content-center">
+                        <button type="submit" class="btn btn-primary me-3">Save changes</button>
+                      </div>
+                    </form>
+                    </div>
+                  </div>
+                
+                  <!-- /User Card -->
                   </div>
                   <!-- /Project table -->
 

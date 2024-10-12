@@ -1,5 +1,5 @@
 from django import forms
-from .models import Client, ClientService
+from .models import Client
 
 class ClientForm(forms.ModelForm):
     class Meta:
@@ -16,16 +16,3 @@ class ClientForm(forms.ModelForm):
         self.fields['first_name'].required = True
         self.fields['last_name'].required = True
         self.fields['phone_number'].required = True
-        
-class ClientServiceForm(forms.ModelForm):
-    class Meta:
-        model = ClientService
-        fields = ['client', 'router', 'pppoe_username', 'pppoe_password', 'pool', 'tariff']
-        widgets = {
-            'pppoe_password': forms.PasswordInput(),
-        }
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        for field in self.fields:
-            self.fields[field].widget.attrs.update({'class': 'form-control'})

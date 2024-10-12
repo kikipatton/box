@@ -1,15 +1,14 @@
-from django.urls import reverse, reverse_lazy
+from django.urls import reverse
 from django.views.generic import CreateView, ListView, DetailView
 # Create your views here.
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
-from django.shortcuts import redirect, get_object_or_404
+from django.shortcuts import redirect
 from django.utils import timezone
-from .models import Client, ClientService
-from .forms import ClientForm, ClientServiceForm
+from .models import Client
+from .forms import ClientForm
 from django.db.models import Count, Q
 from django.http import JsonResponse
-from utils.mikrotik import create_pppoe_client
 from django.contrib.auth.decorators import login_required
 
 
@@ -86,38 +85,7 @@ class ClientView(DetailView):
             form.save()
             return redirect(reverse('clientview', kwargs={'pk': self.object.pk}))
         return self.render_to_response(self.get_context_data(form=form))
-    
-class ClientServiceCreateView(CreateView):
-    model = ClientService
-    form_class = ClientServiceForm
-    template_name = 'client/client_service_form.html'
-    success_url = reverse_lazy('clientlist')
-    
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        client_pk = self.kwargs.get('pk')
-        context['client'] = get_object_or_404(Client, pk=client_pk)
-        return context
-
-    def form_valid(self, form):
-        response = super().form_valid(form)
-        service = form.instance
-        
-        # Create PPPoE client on Mikrotik
-        success = create_pppoe_client(
-            service.router,
-            service.pppoe_username,
-            service.pppoe_password,
-            service.pool.name if service.pool else None,
-            service.tariff.name if service.tariff else None
-        )
-
-        if success:
-            messages.success(self.request, 'Client service created successfully and configured on Mikrotik.')
-        else:
-            messages.error(self.request, 'Client service created but Mikrotik configuration failed.')
-
-        return response   
+      
 
 @login_required
 def client_list_json(request):

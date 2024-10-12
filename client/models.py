@@ -25,16 +25,3 @@ class Client(models.Model):
 
     class Meta:
         ordering = ['-created_at']
-        
-class ClientService(models.Model):
-    client = models.ForeignKey(Client, on_delete=models.CASCADE)
-    router = models.ForeignKey('network.Router', on_delete=models.CASCADE)
-    pppoe_username = models.CharField(max_length=50, unique=True)
-    pppoe_password = models.CharField(max_length=50)
-    pool = models.ForeignKey('network.IPPool', on_delete=models.SET_NULL, null=True)
-    tariff = models.ForeignKey('tariff.Tariff', on_delete=models.SET_NULL, null=True)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-
-    def __str__(self):
-        return f"{self.client} - {self.pppoe_username}"

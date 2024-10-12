@@ -551,3 +551,243 @@ Not Found: /client/assets/img/avatars/1.png
 Not Found: /client/assets/img/avatars/5.png
 Not Found: /client/assets/img/avatars/12.png
 Not Found: /client/assets/img/avatars/6.png
+Not Found: /client/assets//img/icons/misc/pdf.png
+Not Found: /client/assets/img/avatars/1.png
+Not Found: /client/assets/img/avatars/5.png
+Not Found: /client/assets/img/avatars/12.png
+Not Found: /client/assets/img/avatars/6.png
+Not Found: /client/assets//img/icons/misc/pdf.png
+Not Found: /client/assets/img/avatars/1.png
+Not Found: /client/assets/img/avatars/5.png
+Not Found: /client/assets/img/avatars/6.png
+Not Found: /client/assets/img/avatars/12.png
+Internal Server Error: /tariff/1/
+Traceback (most recent call last):
+  File "/home/box/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/box/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/box/venv/lib/python3.8/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/home/box/venv/lib/python3.8/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/home/box/venv/lib/python3.8/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "/home/box/venv/lib/python3.8/site-packages/django/template/loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: tarrif/tariff_detail.html
+Internal Server Error: /accounts/login/
+Traceback (most recent call last):
+  File "/home/box/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/box/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/box/venv/lib/python3.8/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/home/box/venv/lib/python3.8/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/home/box/venv/lib/python3.8/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "/home/box/venv/lib/python3.8/site-packages/django/template/loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: registration/login.html
+Internal Server Error: /accounts/login/
+Traceback (most recent call last):
+  File "/home/box/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/box/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/box/venv/lib/python3.8/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/home/box/venv/lib/python3.8/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/home/box/venv/lib/python3.8/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "/home/box/venv/lib/python3.8/site-packages/django/template/loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: registration/login.html
+Internal Server Error: /accounts/login/
+Traceback (most recent call last):
+  File "/home/box/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/box/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/box/venv/lib/python3.8/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/home/box/venv/lib/python3.8/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/home/box/venv/lib/python3.8/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "/home/box/venv/lib/python3.8/site-packages/django/template/loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: registration/login.html
+Internal Server Error: /accounts/login/
+Traceback (most recent call last):
+  File "/home/box/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/box/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/box/venv/lib/python3.8/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/home/box/venv/lib/python3.8/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/home/box/venv/lib/python3.8/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "/home/box/venv/lib/python3.8/site-packages/django/template/loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: registration/login.html
+/home/box/box/urls.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /accounts/login/
+Traceback (most recent call last):
+  File "/home/box/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/box/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/box/venv/lib/python3.8/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/home/box/venv/lib/python3.8/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/home/box/venv/lib/python3.8/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "/home/box/venv/lib/python3.8/site-packages/django/template/loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: registration/login.html
+/home/box/box/urls.py changed, reloading.
+Watching for file changes with StatReloader
+/home/box/box/urls.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /accounts/login/
+Traceback (most recent call last):
+  File "/home/box/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/box/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/box/venv/lib/python3.8/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/home/box/venv/lib/python3.8/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/home/box/venv/lib/python3.8/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "/home/box/venv/lib/python3.8/site-packages/django/template/loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: registration/login.html
+/home/box/box/settings.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /assets//img/icons/misc/pdf.png
+Not Found: /assets/img/avatars/1.png
+Not Found: /assets/img/avatars/5.png
+Not Found: /assets/img/avatars/6.png
+Not Found: /assets/img/avatars/12.png
+Not Found: /client/assets//img/icons/misc/pdf.png
+Not Found: /client/assets/img/avatars/5.png
+Not Found: /client/assets/img/avatars/1.png
+Not Found: /client/assets/img/avatars/12.png
+Not Found: /client/assets/img/avatars/6.png
+Not Found: /assets//img/icons/misc/pdf.png
+Not Found: /assets/img/avatars/1.png
+Not Found: /assets/img/avatars/6.png
+Not Found: /assets/img/avatars/12.png
+Not Found: /assets/img/avatars/5.png
+Not Found: /client/assets//img/icons/misc/pdf.png
+Not Found: /client/assets/img/avatars/1.png
+Not Found: /client/assets/img/avatars/12.png
+Not Found: /client/assets/img/avatars/6.png
+Not Found: /client/assets/img/avatars/5.png
+Not Found: /assets/img/avatars/1.png
+Not Found: /assets//img/icons/misc/pdf.png
+Not Found: /assets/img/avatars/6.png
+Not Found: /assets/img/avatars/5.png
+Not Found: /assets/img/avatars/12.png
+Not Found: /client/assets//img/icons/misc/pdf.png
+Not Found: /client/assets/img/avatars/1.png
+Not Found: /client/assets/img/avatars/5.png
+Not Found: /client/assets/img/avatars/12.png
+Not Found: /client/assets/img/avatars/6.png
+<--- '/login'
+<--- '=name=kiki'
+<--- '=password=iphoneeleven'
+<--- EOS
+---> '!done'
+---> EOS
+<--- '/login'
+<--- '=name=samir'
+<--- '=password=12345678'
+<--- EOS
+---> '!done'
+---> EOS
+<--- '/login'
+<--- '=name=samir'
+<--- '=password=12345678'
+<--- EOS
+---> '!done'
+---> EOS
+<--- '/login'
+<--- '=name=samir'
+<--- '=password=12345678'
+<--- EOS
+---> '!done'
+---> EOS
+<--- '/login'
+<--- '=name=samir'
+<--- '=password=12345678'
+<--- EOS
+---> '!done'
+---> EOS
+Internal Server Error: /tariff/1/
+Traceback (most recent call last):
+  File "/home/box/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/box/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/box/venv/lib/python3.8/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/home/box/venv/lib/python3.8/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/home/box/venv/lib/python3.8/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "/home/box/venv/lib/python3.8/site-packages/django/template/loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: tarrif/tariff_detail.html
+Not Found: /assets//img/icons/misc/pdf.png
+Not Found: /assets/img/avatars/5.png
+Not Found: /assets/img/avatars/1.png
+Not Found: /assets/img/avatars/12.png
+Not Found: /assets/img/avatars/6.png
+Not Found: /client/assets/img/avatars/1.png
+Not Found: /client/assets//img/icons/misc/pdf.png
+Not Found: /client/assets/img/avatars/5.png
+Not Found: /client/assets/img/avatars/12.png
+Not Found: /client/assets/img/avatars/6.png
+<--- '/login'
+<--- '=name=samir'
+<--- '=password=12345678'
+<--- EOS
+---> '!done'
+---> EOS
+<--- '/ppp/secret/add'
+<--- '=name=588'
+<--- '=password=588123'
+<--- '=service=pppoe'
+<--- '=profile=10 Mbps'
+<--- EOS
+---> '!done'
+---> '=ret=*6'
+---> EOS
+Not Found: /client/assets//img/icons/misc/pdf.png
+Not Found: /client/assets/img/avatars/1.png
+Not Found: /client/assets/img/avatars/6.png
+Not Found: /client/assets/img/avatars/5.png
+Not Found: /client/assets/img/avatars/12.png
+Not Found: /assets//img/icons/misc/pdf.png
+Not Found: /assets/img/avatars/1.png
+Not Found: /assets/img/avatars/12.png
+Not Found: /assets/img/avatars/5.png
+Not Found: /assets/img/avatars/6.png
+Not Found: /assets/img/avatars/1.png
+Not Found: /assets//img/icons/misc/pdf.png
+Not Found: /assets/img/avatars/12.png
+Not Found: /assets/img/avatars/6.png
+Not Found: /assets/img/avatars/5.png
+/home/box/box/settings.py changed, reloading.
+Watching for file changes with StatReloader

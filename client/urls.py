@@ -6,4 +6,5 @@ urlpatterns = [
     path('client/add/', views.AddView.as_view(), name='clientadd'),
     path('client/json/', views.client_list_json, name='client_list_json'),
     path('client/<int:pk>/', views.ClientView.as_view(), name='clientview'),
+    path('client/assign-service/<int:pk>/', views.ClientServiceCreateView.as_view(), name='assign_service'),
 ]

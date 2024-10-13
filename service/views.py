@@ -43,16 +43,16 @@ class ClientDetailPPPoEView(DetailView):
                 if not mikrotik_success:
                     raise ValidationError("Failed to update/create PPPoE service in Mikrotik router")
 
-                messages.success(request, 'PPPoE service updated successfully.' if existing_service else 'PPPoE service created successfully.')
+                messages.success(request, 'Service Updated Successfully.' if existing_service else 'Service Created Successfully.')
                 return redirect('client_detail_pppoe', pk=self.object.pk)
             except ValidationError as e:
-                messages.error(request, str(e))
+                messages.success(request, str(e))
             except Exception as e:
-                messages.error(request, f'Error saving PPPoE service: {str(e)}')
+                messages.success(request, f'Error saving PPPoE service: {str(e)}')
         else:
             for field, errors in form.errors.items():
                 for error in errors:
-                    messages.error(request, f'{field}: {error}')
+                    messages.success(request, f'{field}: {error}')
 
         return self.render_to_response(self.get_context_data(form=form))
 

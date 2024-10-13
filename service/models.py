@@ -59,7 +59,7 @@ class PPPoEService(models.Model):
                     name=self.username,
                     password=self.password,
                     service='pppoe',
-                    profile=self.tariff.name
+                    profile=self.ip_pool.name
                 )
                 print(f"Raw response from add operation: {new_secret}")
                 

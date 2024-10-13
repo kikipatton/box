@@ -83,6 +83,7 @@ class ClientView(DetailView):
         form = ClientForm(request.POST, instance=self.object)
         if form.is_valid():
             form.save()
+            messages.success(self.request, f'Client Updated successfully.')
             return redirect(reverse('clientview', kwargs={'pk': self.object.pk}))
         return self.render_to_response(self.get_context_data(form=form))
       

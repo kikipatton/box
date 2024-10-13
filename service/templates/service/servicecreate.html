@@ -318,7 +318,7 @@
                         </div>
                       </div>
                     </div>
-                    <h5 class="pb-4 border-bottom mb-4"><span class="badge bg-label-primary"">Account: {{ client.account_number }}</span></h5>
+                    <h7 class="pb-4 border-bottom mb-4"><span class="badge bg-label-primary"">Account: {{ client.account_number }}</span></h5>
                     <div class="info-container">
                       <form id="formAccountSettings" method="POST" action="{% url 'clientview' pk=client.pk %}">
                         {% csrf_token %}
@@ -394,10 +394,10 @@
                   <div class="card mb-6 border border-2 border-primary rounded primary-shadow">
                     <div class="card-body">
                       <div class="d-flex justify-content-between align-items-start">
-                        <span class="badge bg-label-primary">Standard</span>
+                        <span class="badge bg-label-primary">{{ pppoe_service.tariff.name }}</span>
                         <div class="d-flex justify-content-center">
-                          <sub class="h5 pricing-currency mb-auto mt-1 text-primary">$</sub>
-                          <h1 class="mb-0 text-primary">99</h1>
+                          <sub class="h5 pricing-currency mb-auto mt-1 text-primary">Ksh</sub>
+                          <h1 class="mb-0 text-primary">{{ pppoe_service.tariff.price }}</h1>
                           <sub class="h6 pricing-duration mt-auto mb-3 fw-normal">month</sub>
                         </div>
                       </div>
@@ -444,16 +444,16 @@
                   <div class="nav-align-top">
                     <ul class="nav nav-pills flex-column flex-md-row flex-wrap mb-6 row-gap-2">
                       <li class="nav-item">
-                        <a class="nav-link active" href="{ url 'client_detail_pppoe' pk=client.pk}"
-                          ><i class="ti ti-user-check ti-sm me-1_5"></i>Service</a
-                        >
-                      </li>
-               <!--       <li class="nav-item">
-                        <a class="nav-link" href="app-user-view-security.html"
-                          ><i class="ti ti-receipt ti-sm me-1_5"></i>Billing</a
+                        <a class="nav-link" href="{% url 'clientview' pk=client.pk %}"
+                          ><i class="ti ti-user-check ti-sm me-1_5"></i>Account</a
                         >
                       </li>
                       <li class="nav-item">
+                        <a class="nav-link active" href="{% url 'client_detail_pppoe' pk=client.pk %}"
+                          ><i class="ti ti-receipt ti-sm me-1_5"></i>Service</a
+                        >
+                      </li>
+                     <!-- <li class="nav-item">
                         <a class="nav-link" href="app-user-view-billing.html"
                           ><i class="ti ti-bookmark ti-sm me-1_5"></i>Usage</a
                         >
@@ -484,12 +484,16 @@
                       {% endif %}
                       <div class="d-flex align-items-center flex-column">
                         <div class="user-info text-center">
-                          <h5>{{ client.first_name }} {{ client.last_name }}</h5>
-                          <span class="badge bg-label-secondary">{{ pppoe_service.created_at }}</span>
+                          <h5><span class="badge bg-label-primary">{{ pppoe_service.tariff.description }}</span></h5>    
+                        </div>
+                      </div>
+                      <div class="d-flex align-items-center flex-column">
+                        <div class="user-info text-center">
+                          <h6 class="text-center mb-4"><span class="badge bg-label-secondary"">Added: {{ pppoe_service.created_at }}</span></h6>
                         </div>
                       </div>
                     </div>
-                    <h5 class="pb-4 border-bottom mb-4"><span class="badge bg-label-primary"">Service: {{ pppoe_service.pk }}</span></h5>
+                    
                     <div class="info-container">
                       <form id="newServiceForm" class="row g-3" action="{% url 'client_detail_pppoe' pk=client.pk %}" method="POST">
                         {% csrf_token %}

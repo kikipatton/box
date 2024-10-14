@@ -24969,3 +24969,231 @@ Watching for file changes with StatReloader
 ---> EOS
 ---> '!done'
 ---> EOS
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+<--- '/login'
+<--- '=name=samir'
+<--- '=password=12345678'
+<--- EOS
+---> '!done'
+---> EOS
+<--- '/ppp/secret/add'
+<--- '=name=13'
+<--- '=password=hebcoqhb'
+<--- '=service=pppoe'
+<--- '=profile=10 Mbps'
+<--- '=disabled=yes'
+<--- EOS
+---> '!done'
+---> '=ret=*5'
+---> EOS
+<--- '/ppp/secret/print'
+<--- '=.proplist=name,.id'
+<--- '.'
+<--- 'i'
+<--- 'd'
+<--- '*'
+<--- '5'
+<--- EOS
+---> '!re'
+---> '=name=twg'
+---> '=.id=*1'
+---> EOS
+---> '!re'
+---> '=name=Dave'
+---> '=.id=*2'
+---> EOS
+---> '!re'
+---> '=name=Security'
+---> '=.id=*3'
+---> EOS
+---> '!re'
+---> '=name=Anderson'
+---> '=.id=*4'
+---> EOS
+---> '!re'
+---> '=name=13'
+---> '=.id=*5'
+---> EOS
+---> '!done'
+---> EOS
+/home/box/service/views.py changed, reloading.
+Watching for file changes with StatReloader
+<--- '/login'
+<--- '=name=samir'
+<--- '=password=12345678'
+<--- EOS
+---> '!done'
+---> EOS
+<--- '/ppp/secret/add'
+<--- '=name=12'
+<--- '=password=wefcewfcew'
+<--- '=service=pppoe'
+<--- '=profile=10 Mbps'
+<--- '=disabled=yes'
+<--- EOS
+---> '!done'
+---> '=ret=*6'
+---> EOS
+<--- '/ppp/secret/print'
+<--- '=.proplist=name,.id'
+<--- '.'
+<--- 'i'
+<--- 'd'
+<--- '*'
+<--- '6'
+<--- EOS
+---> '!re'
+---> '=name=twg'
+---> '=.id=*1'
+---> EOS
+---> '!re'
+---> '=name=Dave'
+---> '=.id=*2'
+---> EOS
+---> '!re'
+---> '=name=Security'
+---> '=.id=*3'
+---> EOS
+---> '!re'
+---> '=name=Anderson'
+---> '=.id=*4'
+---> EOS
+---> '!re'
+---> '=name=13'
+---> '=.id=*5'
+---> EOS
+---> '!re'
+---> '=name=12'
+---> '=.id=*6'
+---> EOS
+---> '!done'
+---> EOS
+/home/box/billing/admin.py changed, reloading.
+Watching for file changes with StatReloader
+/home/box/billing/admin.py changed, reloading.
+Watching for file changes with StatReloader
+/home/box/billing/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/box/billing/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/box/billing/urls.py changed, reloading.
+Watching for file changes with StatReloader
+/home/box/billing/urls.py changed, reloading.
+Watching for file changes with StatReloader
+/home/box/billing/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/box/billing/views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /billing/invoices/
+Traceback (most recent call last):
+  File "/home/box/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/box/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/box/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/box/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/home/box/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/box/venv/lib/python3.8/site-packages/django/views/generic/list.py", line 154, in get
+    self.object_list = self.get_queryset()
+  File "/home/box/billing/views.py", line 25, in get_queryset
+    Q(client__icontains=search_query)
+NameError: name 'Q' is not defined
+Internal Server Error: /billing/invoices/
+Traceback (most recent call last):
+  File "/home/box/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/box/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/box/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/box/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/home/box/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/box/venv/lib/python3.8/site-packages/django/views/generic/list.py", line 154, in get
+    self.object_list = self.get_queryset()
+  File "/home/box/billing/views.py", line 25, in get_queryset
+    Q(client__icontains=search_query)
+NameError: name 'Q' is not defined
+/home/box/billing/views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /billing/invoices/
+Traceback (most recent call last):
+  File "/home/box/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/box/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/box/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/box/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/home/box/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/box/venv/lib/python3.8/site-packages/django/views/generic/list.py", line 154, in get
+    self.object_list = self.get_queryset()
+  File "/home/box/billing/views.py", line 24, in get_queryset
+    queryset = queryset.filter(
+  File "/home/box/venv/lib/python3.8/site-packages/django/db/models/query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/home/box/venv/lib/python3.8/site-packages/django/db/models/query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/home/box/venv/lib/python3.8/site-packages/django/db/models/query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/home/box/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1546, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/box/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1577, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/home/box/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1405, in build_filter
+    return self._add_q(
+  File "/home/box/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1577, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/home/box/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1492, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/home/box/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1313, in build_lookup
+    lhs = self.try_transform(lhs, lookup_name)
+  File "/home/box/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1357, in try_transform
+    raise FieldError(
+django.core.exceptions.FieldError: Unsupported lookup 'icontains' for ForeignKey or join on the field not permitted.
+Internal Server Error: /billing/invoices/
+Traceback (most recent call last):
+  File "/home/box/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/box/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/box/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/box/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/home/box/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/box/venv/lib/python3.8/site-packages/django/views/generic/list.py", line 154, in get
+    self.object_list = self.get_queryset()
+  File "/home/box/billing/views.py", line 24, in get_queryset
+    queryset = queryset.filter(
+  File "/home/box/venv/lib/python3.8/site-packages/django/db/models/query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/home/box/venv/lib/python3.8/site-packages/django/db/models/query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/home/box/venv/lib/python3.8/site-packages/django/db/models/query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/home/box/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1546, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/box/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1577, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/home/box/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1405, in build_filter
+    return self._add_q(
+  File "/home/box/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1577, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/home/box/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1492, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/home/box/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1313, in build_lookup
+    lhs = self.try_transform(lhs, lookup_name)
+  File "/home/box/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1357, in try_transform
+    raise FieldError(
+django.core.exceptions.FieldError: Unsupported lookup 'icontains' for ForeignKey or join on the field not permitted.
+/home/box/billing/views.py changed, reloading.
+Watching for file changes with StatReloader

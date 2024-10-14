@@ -16,9 +16,14 @@ class Client(models.Model):
     phone_number = models.CharField(max_length=20)
     address = models.TextField(blank=True)
     city = models.CharField(max_length=100, blank=True)
+    balance = models.DecimalField(max_digits=10, decimal_places=2, default=0)
     status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='Inactive')
     created_by = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     created_at = models.DateTimeField(default=timezone.now)
+    
+    def update_balance(self, amount):
+        self.balance += amount
+        self.save()
 
     def __str__(self):
         return f"{self.first_name} {self.last_name} (Account: {self.account_number})"

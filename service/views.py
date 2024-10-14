@@ -36,7 +36,12 @@ class ClientDetailPPPoEView(DetailView):
             try:
                 pppoe_service = form.save(commit=False)
                 pppoe_service.client = self.object
-                pppoe_service.save()
+                
+                is_new_service = pppoe_service.pk is None
+                pppoe_service.save()  # This will trigger the save method in the model
+
+                if is_new_service:
+                    pppoe_service.create_initial_invoice()
 
                 # Update or create in Mikrotik
                 mikrotik_success = pppoe_service.update_or_create_in_mikrotik()

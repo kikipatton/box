@@ -1,5 +1,6 @@
 from django.db import models
 from django.core.exceptions import ValidationError
+from django.utils import timezone
 from client.models import Client
 from network.models import Router, IPPool
 from tariff.models import Tariff
@@ -7,6 +8,7 @@ from librouteros import connect
 from librouteros.login import token
 import traceback
 from librouteros.exceptions import TrapError
+from billing.models import Invoice
 
 class PPPoEService(models.Model):
     client = models.OneToOneField(Client, on_delete=models.CASCADE, related_name='pppoe_service')
@@ -18,11 +20,33 @@ class PPPoEService(models.Model):
     mikrotik_secret_id = models.CharField(max_length=50, blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    last_billing_date = models.DateTimeField(null=True, blank=True)
+    next_billing_date = models.DateTimeField(null=True, blank=True)
+    is_active = models.BooleanField(default=False)
 
     def save(self, *args, **kwargs):
         if not self.pk and PPPoEService.objects.filter(client=self.client).exists():
             raise ValidationError("This client already has a PPPoE service.")
+        
+        is_new = self.pk is None
         super().save(*args, **kwargs)
+        
+        if is_new:
+            self.create_initial_invoice()
+
+    def create_initial_invoice(self):
+        Invoice.objects.create(
+            client=self.client,
+            tariff=self.tariff,
+            amount=self.tariff.price,
+            due_date=timezone.now() + timezone.timedelta(days=1)
+        )
+        self.update_next_billing_date()
+
+    def update_next_billing_date(self):
+        self.last_billing_date = timezone.now()
+        self.next_billing_date = self.last_billing_date + timezone.timedelta(days=30)
+        self.save()
 
     def update_or_create_in_mikrotik(self):
         print(f"Updating or creating in Mikrotik for username: {self.username}")
@@ -59,19 +83,17 @@ class PPPoEService(models.Model):
                     name=self.username,
                     password=self.password,
                     service='pppoe',
-                    profile=self.ip_pool.name
+                    profile=self.ip_pool.name,
+                    disabled=not self.is_active  # Set the disabled state based on is_active
                 )
                 print(f"Raw response from add operation: {new_secret}")
                 
                 # Handle the response based on its type
                 if isinstance(new_secret, str):
-                    # If it's a string, it might be the ID directly
                     new_secret_id = new_secret
                 elif isinstance(new_secret, dict):
-                    # If it's a dictionary, try to get the 'ret' key
                     new_secret_id = new_secret.get('ret', '')
                 elif isinstance(new_secret, (list, tuple)) and len(new_secret) > 0:
-                    # If it's a list or tuple, take the first item
                     new_secret_id = new_secret[0]
                 else:
                     raise ValueError(f"Unexpected response format: {type(new_secret)}")
@@ -156,3 +178,23 @@ class PPPoEService(models.Model):
 
     def __str__(self):
         return f"{self.client} - {self.username}"
+
+    def activate(self):
+        self.is_active = True
+        self.save()
+        self.update_or_create_in_mikrotik()
+
+    def deactivate(self):
+        self.is_active = False
+        self.save()
+        self.update_or_create_in_mikrotik()
+
+    def generate_next_invoice(self):
+        if self.next_billing_date and self.next_billing_date <= timezone.now():
+            Invoice.objects.create(
+                client=self.client,
+                tariff=self.tariff,
+                amount=self.tariff.price,
+                due_date=self.next_billing_date + timezone.timedelta(days=1)
+            )
+            self.update_next_billing_date()

@@ -43,19 +43,31 @@ class Payment(models.Model):
         return f"Payment {self.id} - {self.client} - {self.amount}"
 
     def save(self, *args, **kwargs):
+        is_new = self.pk is None
         super().save(*args, **kwargs)
-        self.client.update_balance(self.amount)
-        self.check_and_pay_invoices()
+        if is_new:
+            self.process_payment()
 
-    def check_and_pay_invoices(self):
+    def process_payment(self):
         unpaid_invoices = Invoice.objects.filter(client=self.client, status='PENDING').order_by('due_date')
+        remaining_amount = self.amount
+
         for invoice in unpaid_invoices:
-            if self.client.balance >= invoice.amount:
+            if remaining_amount >= invoice.amount:
                 invoice.mark_as_paid()
-                self.client.update_balance(-invoice.amount)
+                remaining_amount -= invoice.amount
+                self.invoice = invoice
+                self.save()
+
                 service = self.client.pppoe_service
                 if service:
-                    service.update_next_billing_date()
-                    service.update_or_create_in_mikrotik()
+                    service.activate()
+                    service.update_next_billing_date(from_date=self.payment_date)
             else:
                 break
+
+        if remaining_amount > 0:
+            self.client.update_balance(remaining_amount)
+
+        if self.invoice is None:
+            self.client.update_balance(self.amount)

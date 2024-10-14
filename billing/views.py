@@ -6,9 +6,34 @@ from django.views.generic import ListView
 from django.core.paginator import Paginator
 from django.db.models import Sum
 from .models import Invoice, Payment, Client
+from django.http import JsonResponse
+from django.views.decorators.http import require_GET
+from django.views.decorators.csrf import csrf_exempt
+from django.utils import timezone
+from service.models import PPPoEService
 from .forms import InvoiceForm, PaymentForm
-from .forms import InvoiceForm, ManualPaymentForm, MPesaPaymentForm
+from .forms import InvoiceForm
 
+
+@csrf_exempt
+@require_GET
+def process_due_invoices_api(request):
+    try:
+        processed_count = 0
+        for service in PPPoEService.objects.filter(is_active=True, next_billing_date__lte=timezone.now()):
+            service.generate_next_invoice()
+            processed_count += 1
+        
+        return JsonResponse({
+            'status': 'success',
+            'message': f'Processed {processed_count} due invoices',
+        })
+    except Exception as e:
+        return JsonResponse({
+            'status': 'error',
+            'message': str(e),
+        }, status=500)
+        
 # Invoice Views
 class InvoiceListView(LoginRequiredMixin, ListView):
     model = Invoice

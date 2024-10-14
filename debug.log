@@ -25433,3 +25433,686 @@ Watching for file changes with StatReloader
 ---> EOS
 /home/box/service/models.py changed, reloading.
 Watching for file changes with StatReloader
+/home/box/service/models.py changed, reloading.
+Watching for file changes with StatReloader
+/home/box/service/models.py changed, reloading.
+Watching for file changes with StatReloader
+/home/box/service/models.py changed, reloading.
+Watching for file changes with StatReloader
+<--- '/login'
+<--- '=name=samir'
+<--- '=password=12345678'
+<--- EOS
+---> '!done'
+---> EOS
+<--- '/ppp/secret/add'
+<--- '=name=13'
+<--- '=password=wecewvcew'
+<--- '=service=pppoe'
+<--- '=profile=10 Mbps'
+<--- '=disabled=yes'
+<--- EOS
+---> '!trap'
+---> '=message=failure: secret with the same name already exists'
+---> EOS
+---> '!done'
+---> EOS
+<--- '/login'
+<--- '=name=samir'
+<--- '=password=12345678'
+<--- EOS
+---> '!done'
+---> EOS
+<--- '/ppp/secret/add'
+<--- '=name=12'
+<--- '=password=fewfew'
+<--- '=service=pppoe'
+<--- '=profile=10 Mbps'
+<--- '=disabled=yes'
+<--- EOS
+---> '!done'
+---> '=ret=*B'
+---> EOS
+<--- '/ppp/secret/print'
+<--- '=.proplist=name,.id'
+<--- '.'
+<--- 'i'
+<--- 'd'
+<--- '*'
+<--- 'B'
+<--- EOS
+---> '!re'
+---> '=name=twg'
+---> '=.id=*1'
+---> EOS
+---> '!re'
+---> '=name=Dave'
+---> '=.id=*2'
+---> EOS
+---> '!re'
+---> '=name=Security'
+---> '=.id=*3'
+---> EOS
+---> '!re'
+---> '=name=Anderson'
+---> '=.id=*4'
+---> EOS
+---> '!re'
+---> '=name=12'
+---> '=.id=*B'
+---> EOS
+---> '!done'
+---> EOS
+<--- '/login'
+<--- '=name=samir'
+<--- '=password=12345678'
+<--- EOS
+---> '!done'
+---> EOS
+<--- '/ppp/secret/remove'
+<--- '=.id=*B'
+<--- EOS
+---> '!done'
+---> EOS
+<--- '/ppp/secret/add'
+<--- '=name=12'
+<--- '=password=fewfew'
+<--- '=service=pppoe'
+<--- '=profile=10 Mbps'
+<--- '=disabled=yes'
+<--- EOS
+---> '!done'
+---> '=ret=*C'
+---> EOS
+<--- '/ppp/secret/print'
+<--- '=.proplist=name,.id'
+<--- '.'
+<--- 'i'
+<--- 'd'
+<--- '*'
+<--- 'C'
+<--- EOS
+---> '!re'
+---> '=name=twg'
+---> '=.id=*1'
+---> EOS
+---> '!re'
+---> '=name=Dave'
+---> '=.id=*2'
+---> EOS
+---> '!re'
+---> '=name=Security'
+---> '=.id=*3'
+---> EOS
+---> '!re'
+---> '=name=Anderson'
+---> '=.id=*4'
+---> EOS
+---> '!re'
+---> '=name=12'
+---> '=.id=*C'
+---> EOS
+---> '!done'
+---> EOS
+<--- '/login'
+<--- '=name=samir'
+<--- '=password=12345678'
+<--- EOS
+---> '!done'
+---> EOS
+<--- '/ppp/secret/remove'
+<--- '=.id=*C'
+<--- EOS
+---> '!done'
+---> EOS
+<--- '/ppp/secret/add'
+<--- '=name=12'
+<--- '=password=fewfew'
+<--- '=service=pppoe'
+<--- '=profile=10 Mbps'
+<--- '=disabled=yes'
+<--- EOS
+---> '!done'
+---> '=ret=*D'
+---> EOS
+<--- '/ppp/secret/print'
+<--- '=.proplist=name,.id'
+<--- '.'
+<--- 'i'
+<--- 'd'
+<--- '*'
+<--- 'D'
+<--- EOS
+---> '!re'
+---> '=name=twg'
+---> '=.id=*1'
+---> EOS
+---> '!re'
+---> '=name=Dave'
+---> '=.id=*2'
+---> EOS
+---> '!re'
+---> '=name=Security'
+---> '=.id=*3'
+---> EOS
+---> '!re'
+---> '=name=Anderson'
+---> '=.id=*4'
+---> EOS
+---> '!re'
+---> '=name=12'
+---> '=.id=*D'
+---> EOS
+---> '!done'
+---> EOS
+Watching for file changes with StatReloader
+/home/box/service/views.py changed, reloading.
+Watching for file changes with StatReloader
+<--- '/login'
+<--- '=name=samir'
+<--- '=password=12345678'
+<--- EOS
+---> '!done'
+---> EOS
+<--- '/ppp/secret/add'
+<--- '=name=10'
+<--- '=password=aefervfervr'
+<--- '=service=pppoe'
+<--- '=profile=20 Mbps'
+<--- '=disabled=yes'
+<--- EOS
+---> '!done'
+---> '=ret=*E'
+---> EOS
+<--- '/ppp/secret/print'
+<--- '=.proplist=name,.id'
+<--- '.'
+<--- 'i'
+<--- 'd'
+<--- '*'
+<--- 'E'
+<--- EOS
+---> '!re'
+---> '=name=twg'
+---> '=.id=*1'
+---> EOS
+---> '!re'
+---> '=name=Dave'
+---> '=.id=*2'
+---> EOS
+---> '!re'
+---> '=name=Security'
+---> '=.id=*3'
+---> EOS
+---> '!re'
+---> '=name=Anderson'
+---> '=.id=*4'
+---> EOS
+---> '!re'
+---> '=name=12'
+---> '=.id=*D'
+---> EOS
+---> '!re'
+---> '=name=10'
+---> '=.id=*E'
+---> EOS
+---> '!done'
+---> EOS
+<--- '/login'
+<--- '=name=samir'
+<--- '=password=12345678'
+<--- EOS
+---> '!done'
+---> EOS
+<--- '/ppp/secret/remove'
+<--- '=.id=*E'
+<--- EOS
+---> '!done'
+---> EOS
+<--- '/ppp/secret/add'
+<--- '=name=10'
+<--- '=password=aefervfervr'
+<--- '=service=pppoe'
+<--- '=profile=20 Mbps'
+<--- '=disabled=yes'
+<--- EOS
+---> '!done'
+---> '=ret=*F'
+---> EOS
+<--- '/ppp/secret/print'
+<--- '=.proplist=name,.id'
+<--- '.'
+<--- 'i'
+<--- 'd'
+<--- '*'
+<--- 'F'
+<--- EOS
+---> '!re'
+---> '=name=twg'
+---> '=.id=*1'
+---> EOS
+---> '!re'
+---> '=name=Dave'
+---> '=.id=*2'
+---> EOS
+---> '!re'
+---> '=name=Security'
+---> '=.id=*3'
+---> EOS
+---> '!re'
+---> '=name=Anderson'
+---> '=.id=*4'
+---> EOS
+---> '!re'
+---> '=name=12'
+---> '=.id=*D'
+---> EOS
+---> '!re'
+---> '=name=10'
+---> '=.id=*F'
+---> EOS
+---> '!done'
+---> EOS
+/home/box/billing/models.py changed, reloading.
+Watching for file changes with StatReloader
+/home/box/billing/models.py changed, reloading.
+Watching for file changes with StatReloader
+/home/box/service/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/box/service/models.py changed, reloading.
+Watching for file changes with StatReloader
+/home/box/billing/models.py changed, reloading.
+Watching for file changes with StatReloader
+/home/box/service/models.py changed, reloading.
+Watching for file changes with StatReloader
+/home/box/service/views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+/home/box/billing/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/box/billing/models.py changed, reloading.
+Watching for file changes with StatReloader
+/home/box/service/models.py changed, reloading.
+Watching for file changes with StatReloader
+/home/box/service/models.py changed, reloading.
+Watching for file changes with StatReloader
+/home/box/service/models.py changed, reloading.
+Watching for file changes with StatReloader
+/home/box/service/models.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+/home/box/service/models.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /billing/payments/create/
+Traceback (most recent call last):
+  File "/home/box/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/box/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/box/venv/lib/python3.8/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/box/billing/views.py", line 87, in create_payment
+    payment = form.save()
+  File "/home/box/venv/lib/python3.8/site-packages/django/forms/models.py", line 542, in save
+    self.instance.save()
+  File "/home/box/billing/models.py", line 49, in save
+    self.process_payment()
+  File "/home/box/billing/models.py", line 64, in process_payment
+    service.activate()
+  File "/home/box/service/models.py", line 114, in activate
+    logger.info(f"Service activation attempt for client {self.client.id}: {'Successful' if success else 'Failed'}")
+NameError: name 'logger' is not defined
+/home/box/service/models.py changed, reloading.
+Watching for file changes with StatReloader
+/home/box/service/models.py changed, reloading.
+Watching for file changes with StatReloader
+/home/box/service/models.py changed, reloading.
+Watching for file changes with StatReloader
+/home/box/service/models.py changed, reloading.
+Watching for file changes with StatReloader
+/home/box/service/models.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+/home/box/service/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/box/service/views.py changed, reloading.
+Watching for file changes with StatReloader
+<--- '/login'
+<--- '=name=samir'
+<--- '=password=12345678'
+<--- EOS
+---> '!done'
+---> EOS
+<--- '/ppp/secret/add'
+<--- '=name=6'
+<--- '=password=QWEEWRR'
+<--- '=service=pppoe'
+<--- '=profile=10 Mbps'
+<--- EOS
+---> '!done'
+---> '=ret=*10'
+---> EOS
+<--- '/ppp/secret/print'
+<--- '=.proplist=name,.id'
+<--- '.'
+<--- 'i'
+<--- 'd'
+<--- '*'
+<--- '1'
+<--- '0'
+<--- EOS
+---> '!re'
+---> '=name=twg'
+---> '=.id=*1'
+---> EOS
+---> '!re'
+---> '=name=Dave'
+---> '=.id=*2'
+---> EOS
+---> '!re'
+---> '=name=Security'
+---> '=.id=*3'
+---> EOS
+---> '!re'
+---> '=name=Anderson'
+---> '=.id=*4'
+---> EOS
+---> '!re'
+---> '=name=12'
+---> '=.id=*D'
+---> EOS
+---> '!re'
+---> '=name=10'
+---> '=.id=*F'
+---> EOS
+---> '!re'
+---> '=name=6'
+---> '=.id=*10'
+---> EOS
+---> '!done'
+---> EOS
+/home/box/service/views.py changed, reloading.
+Watching for file changes with StatReloader
+<--- '/login'
+<--- '=name=samir'
+<--- '=password=12345678'
+<--- EOS
+---> '!done'
+---> EOS
+<--- '/ppp/secret/remove'
+<--- '=.id=*10'
+<--- EOS
+---> '!done'
+---> EOS
+<--- '/ppp/secret/add'
+<--- '=name=6'
+<--- '=password=QWEEWRR'
+<--- '=service=pppoe'
+<--- '=profile=10 Mbps'
+<--- EOS
+---> '!done'
+---> '=ret=*11'
+---> EOS
+<--- '/ppp/secret/print'
+<--- '=.proplist=name,.id'
+<--- '.'
+<--- 'i'
+<--- 'd'
+<--- '*'
+<--- '1'
+<--- '1'
+<--- EOS
+---> '!re'
+---> '=name=twg'
+---> '=.id=*1'
+---> EOS
+---> '!re'
+---> '=name=Dave'
+---> '=.id=*2'
+---> EOS
+---> '!re'
+---> '=name=Security'
+---> '=.id=*3'
+---> EOS
+---> '!re'
+---> '=name=Anderson'
+---> '=.id=*4'
+---> EOS
+---> '!re'
+---> '=name=12'
+---> '=.id=*D'
+---> EOS
+---> '!re'
+---> '=name=10'
+---> '=.id=*F'
+---> EOS
+---> '!re'
+---> '=name=6'
+---> '=.id=*11'
+---> EOS
+---> '!done'
+---> EOS
+Internal Server Error: /billing/api/process-due-invoices/
+<--- '/login'
+<--- '=name=samir'
+<--- '=password=12345678'
+<--- EOS
+---> '!done'
+---> EOS
+<--- '/ppp/secret/add'
+<--- '=name=14'
+<--- '=password=regerge'
+<--- '=service=pppoe'
+<--- '=profile=10 Mbps'
+<--- EOS
+---> '!done'
+---> '=ret=*12'
+---> EOS
+<--- '/ppp/secret/print'
+<--- '=.proplist=name,.id'
+<--- '.'
+<--- 'i'
+<--- 'd'
+<--- '*'
+<--- '1'
+<--- '2'
+<--- EOS
+---> '!re'
+---> '=name=twg'
+---> '=.id=*1'
+---> EOS
+---> '!re'
+---> '=name=Dave'
+---> '=.id=*2'
+---> EOS
+---> '!re'
+---> '=name=Security'
+---> '=.id=*3'
+---> EOS
+---> '!re'
+---> '=name=Anderson'
+---> '=.id=*4'
+---> EOS
+---> '!re'
+---> '=name=14'
+---> '=.id=*12'
+---> EOS
+---> '!done'
+---> EOS
+/home/box/service/models.py changed, reloading.
+Watching for file changes with StatReloader
+<--- '/login'
+<--- '=name=samir'
+<--- '=password=12345678'
+<--- EOS
+---> '!done'
+---> EOS
+<--- '/ppp/secret/remove'
+<--- '=.id=*12'
+<--- EOS
+---> '!done'
+---> EOS
+<--- '/ppp/secret/add'
+<--- '=name=14'
+<--- '=password=regerge'
+<--- '=service=pppoe'
+<--- '=profile=10 Mbps'
+<--- EOS
+---> '!done'
+---> '=ret=*13'
+---> EOS
+<--- '/ppp/secret/print'
+<--- '=.proplist=name,.id'
+<--- '.'
+<--- 'i'
+<--- 'd'
+<--- '*'
+<--- '1'
+<--- '3'
+<--- EOS
+---> '!re'
+---> '=name=twg'
+---> '=.id=*1'
+---> EOS
+---> '!re'
+---> '=name=Dave'
+---> '=.id=*2'
+---> EOS
+---> '!re'
+---> '=name=Security'
+---> '=.id=*3'
+---> EOS
+---> '!re'
+---> '=name=Anderson'
+---> '=.id=*4'
+---> EOS
+---> '!re'
+---> '=name=14'
+---> '=.id=*13'
+---> EOS
+---> '!done'
+---> EOS
+<--- '/login'
+<--- '=name=samir'
+<--- '=password=12345678'
+<--- EOS
+---> '!done'
+---> EOS
+<--- '/ppp/secret/add'
+<--- '=name=13'
+<--- '=password=etgerher'
+<--- '=service=pppoe'
+<--- '=profile=10 Mbps'
+<--- EOS
+---> '!done'
+---> '=ret=*14'
+---> EOS
+<--- '/ppp/secret/print'
+<--- '=.proplist=name,.id'
+<--- '.'
+<--- 'i'
+<--- 'd'
+<--- '*'
+<--- '1'
+<--- '4'
+<--- EOS
+---> '!re'
+---> '=name=twg'
+---> '=.id=*1'
+---> EOS
+---> '!re'
+---> '=name=Dave'
+---> '=.id=*2'
+---> EOS
+---> '!re'
+---> '=name=Security'
+---> '=.id=*3'
+---> EOS
+---> '!re'
+---> '=name=Anderson'
+---> '=.id=*4'
+---> EOS
+---> '!re'
+---> '=name=14'
+---> '=.id=*13'
+---> EOS
+---> '!re'
+---> '=name=13'
+---> '=.id=*14'
+---> EOS
+---> '!done'
+---> EOS
+<--- '/login'
+<--- '=name=samir'
+<--- '=password=12345678'
+<--- EOS
+---> '!done'
+---> EOS
+<--- '/ppp/secret/remove'
+<--- '=.id=*14'
+<--- EOS
+---> '!done'
+---> EOS
+<--- '/ppp/secret/add'
+<--- '=name=13'
+<--- '=password=etgerher'
+<--- '=service=pppoe'
+<--- '=profile=10 Mbps'
+<--- EOS
+---> '!done'
+---> '=ret=*15'
+---> EOS
+<--- '/ppp/secret/print'
+<--- '=.proplist=name,.id'
+<--- '.'
+<--- 'i'
+<--- 'd'
+<--- '*'
+<--- '1'
+<--- '5'
+<--- EOS
+---> '!re'
+---> '=name=twg'
+---> '=.id=*1'
+---> EOS
+---> '!re'
+---> '=name=Dave'
+---> '=.id=*2'
+---> EOS
+---> '!re'
+---> '=name=Security'
+---> '=.id=*3'
+---> EOS
+---> '!re'
+---> '=name=Anderson'
+---> '=.id=*4'
+---> EOS
+---> '!re'
+---> '=name=14'
+---> '=.id=*13'
+---> EOS
+---> '!re'
+---> '=name=13'
+---> '=.id=*15'
+---> EOS
+---> '!done'
+---> EOS
+Internal Server Error: /billing/payments/create/
+Traceback (most recent call last):
+  File "/home/box/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/box/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/box/venv/lib/python3.8/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/box/billing/views.py", line 87, in create_payment
+    payment = form.save()
+  File "/home/box/venv/lib/python3.8/site-packages/django/forms/models.py", line 542, in save
+    self.instance.save()
+  File "/home/box/billing/models.py", line 49, in save
+    self.process_payment()
+  File "/home/box/billing/models.py", line 65, in process_payment
+    service.update_next_billing_date(from_date=self.payment_date)
+TypeError: update_next_billing_date() got an unexpected keyword argument 'from_date'
+/home/box/billing/models.py changed, reloading.
+Watching for file changes with StatReloader

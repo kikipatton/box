@@ -22,7 +22,6 @@ class PPPoEService(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     last_billing_date = models.DateTimeField(null=True, blank=True)
     next_billing_date = models.DateTimeField(null=True, blank=True)
-    is_active = models.BooleanField(default=False)
 
     def save(self, *args, **kwargs):
         if not self.pk and PPPoEService.objects.filter(client=self.client).exists():
@@ -41,7 +40,7 @@ class PPPoEService(models.Model):
             amount=self.tariff.price,
             due_date=timezone.now() + timezone.timedelta(days=1)
         )
-        self.update_next_billing_date()
+        self.save()
 
     def update_next_billing_date(self):
         self.last_billing_date = timezone.now()
@@ -84,7 +83,6 @@ class PPPoEService(models.Model):
                     password=self.password,
                     service='pppoe',
                     profile=self.ip_pool.name,
-                    disabled=not self.is_active  # Set the disabled state based on is_active
                 )
                 print(f"Raw response from add operation: {new_secret}")
                 

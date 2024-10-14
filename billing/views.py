@@ -19,12 +19,6 @@ class InvoiceListView(LoginRequiredMixin, ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        
-        # Debug information
-        print(f"Number of invoices: {self.get_queryset().count()}")
-        for invoice in self.get_queryset()[:5]:  # Print first 5 for debugging
-            print(f"Invoice ID: {invoice.id}, Client: {invoice.client}, Amount: {invoice.amount}")
-        
         return context
 
 @login_required
@@ -49,13 +43,16 @@ def delete_invoice(request, invoice_id):
     return render(request, 'billing/delete_invoice.html', {'invoice': invoice})
 
 # Payment Views
-@login_required
-def payment_list(request):
-    payments = Payment.objects.all().order_by('-payment_date')
-    paginator = Paginator(payments, 20)  # Show 20 payments per page
-    page_number = request.GET.get('page')
-    page_obj = paginator.get_page(page_number)
-    return render(request, 'billing/payment_list.html', {'page_obj': page_obj})
+class PaymentListView(LoginRequiredMixin, ListView):
+    model = Payment
+    template_name = 'billing/payment_list.html'
+    context_object_name = 'payments'
+    paginate_by = 20
+    ordering = ['-payment_date']
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return context
 
 @login_required
 def create_payment(request):

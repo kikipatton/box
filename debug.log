@@ -25197,3 +25197,239 @@ Traceback (most recent call last):
 django.core.exceptions.FieldError: Unsupported lookup 'icontains' for ForeignKey or join on the field not permitted.
 /home/box/billing/views.py changed, reloading.
 Watching for file changes with StatReloader
+/home/box/billing/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/box/billing/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/box/billing/urls.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /billing/payments/
+Traceback (most recent call last):
+  File "/home/box/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/box/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/box/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/box/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/home/box/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/box/venv/lib/python3.8/site-packages/django/views/generic/list.py", line 154, in get
+    self.object_list = self.get_queryset()
+  File "/home/box/venv/lib/python3.8/site-packages/django/views/generic/list.py", line 45, in get_queryset
+    queryset = queryset.order_by(*ordering)
+  File "/home/box/venv/lib/python3.8/site-packages/django/db/models/query.py", line 1659, in order_by
+    obj.query.add_ordering(*field_names)
+  File "/home/box/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 2222, in add_ordering
+    self.names_to_path(item.split(LOOKUP_SEP), self.model._meta)
+  File "/home/box/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1725, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'created_at' into field. Choices are: amount, client, client_id, id, invoice, invoice_id, payment_date, payment_method, transaction_id
+Internal Server Error: /billing/payments/
+Traceback (most recent call last):
+  File "/home/box/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/box/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/box/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/box/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/home/box/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/box/venv/lib/python3.8/site-packages/django/views/generic/list.py", line 154, in get
+    self.object_list = self.get_queryset()
+  File "/home/box/venv/lib/python3.8/site-packages/django/views/generic/list.py", line 45, in get_queryset
+    queryset = queryset.order_by(*ordering)
+  File "/home/box/venv/lib/python3.8/site-packages/django/db/models/query.py", line 1659, in order_by
+    obj.query.add_ordering(*field_names)
+  File "/home/box/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 2222, in add_ordering
+    self.names_to_path(item.split(LOOKUP_SEP), self.model._meta)
+  File "/home/box/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1725, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'created_at' into field. Choices are: amount, client, client_id, id, invoice, invoice_id, payment_date, payment_method, transaction_id
+/home/box/billing/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/box/billing/admin.py changed, reloading.
+Watching for file changes with StatReloader
+<--- '/login'
+<--- '=name=samir'
+<--- '=password=12345678'
+<--- EOS
+---> '!done'
+---> EOS
+<--- '/ppp/secret/add'
+<--- '=name=4'
+<--- '=password=ewrerewr'
+<--- '=service=pppoe'
+<--- '=profile=10 Mbps'
+<--- '=disabled=yes'
+<--- EOS
+---> '!done'
+---> '=ret=*7'
+---> EOS
+<--- '/ppp/secret/print'
+<--- '=.proplist=name,.id'
+<--- '.'
+<--- 'i'
+<--- 'd'
+<--- '*'
+<--- '7'
+<--- EOS
+---> '!re'
+---> '=name=twg'
+---> '=.id=*1'
+---> EOS
+---> '!re'
+---> '=name=Dave'
+---> '=.id=*2'
+---> EOS
+---> '!re'
+---> '=name=Security'
+---> '=.id=*3'
+---> EOS
+---> '!re'
+---> '=name=Anderson'
+---> '=.id=*4'
+---> EOS
+---> '!re'
+---> '=name=13'
+---> '=.id=*5'
+---> EOS
+---> '!re'
+---> '=name=12'
+---> '=.id=*6'
+---> EOS
+---> '!re'
+---> '=name=4'
+---> '=.id=*7'
+---> EOS
+---> '!done'
+---> EOS
+/home/box/service/models.py changed, reloading.
+Watching for file changes with StatReloader
+<--- '/login'
+<--- '=name=samir'
+<--- '=password=12345678'
+<--- EOS
+---> '!done'
+---> EOS
+<--- '/ppp/secret/add'
+<--- '=name=11'
+<--- '=password=efrgverv'
+<--- '=service=pppoe'
+<--- '=profile=20 Mbps'
+<--- '=disabled=yes'
+<--- EOS
+---> '!done'
+---> '=ret=*8'
+---> EOS
+<--- '/ppp/secret/print'
+<--- '=.proplist=name,.id'
+<--- '.'
+<--- 'i'
+<--- 'd'
+<--- '*'
+<--- '8'
+<--- EOS
+---> '!re'
+---> '=name=twg'
+---> '=.id=*1'
+---> EOS
+---> '!re'
+---> '=name=Dave'
+---> '=.id=*2'
+---> EOS
+---> '!re'
+---> '=name=Security'
+---> '=.id=*3'
+---> EOS
+---> '!re'
+---> '=name=Anderson'
+---> '=.id=*4'
+---> EOS
+---> '!re'
+---> '=name=13'
+---> '=.id=*5'
+---> EOS
+---> '!re'
+---> '=name=12'
+---> '=.id=*6'
+---> EOS
+---> '!re'
+---> '=name=4'
+---> '=.id=*7'
+---> EOS
+---> '!re'
+---> '=name=11'
+---> '=.id=*8'
+---> EOS
+---> '!done'
+---> EOS
+/home/box/service/models.py changed, reloading.
+Watching for file changes with StatReloader
+<--- '/login'
+<--- '=name=samir'
+<--- '=password=12345678'
+<--- EOS
+---> '!done'
+---> EOS
+<--- '/ppp/secret/add'
+<--- '=name=10'
+<--- '=password=ervfwevffew'
+<--- '=service=pppoe'
+<--- '=profile=20 Mbps'
+<--- '=disabled=yes'
+<--- EOS
+---> '!done'
+---> '=ret=*9'
+---> EOS
+<--- '/ppp/secret/print'
+<--- '=.proplist=name,.id'
+<--- '.'
+<--- 'i'
+<--- 'd'
+<--- '*'
+<--- '9'
+<--- EOS
+---> '!re'
+---> '=name=twg'
+---> '=.id=*1'
+---> EOS
+---> '!re'
+---> '=name=Dave'
+---> '=.id=*2'
+---> EOS
+---> '!re'
+---> '=name=Security'
+---> '=.id=*3'
+---> EOS
+---> '!re'
+---> '=name=Anderson'
+---> '=.id=*4'
+---> EOS
+---> '!re'
+---> '=name=13'
+---> '=.id=*5'
+---> EOS
+---> '!re'
+---> '=name=12'
+---> '=.id=*6'
+---> EOS
+---> '!re'
+---> '=name=4'
+---> '=.id=*7'
+---> EOS
+---> '!re'
+---> '=name=11'
+---> '=.id=*8'
+---> EOS
+---> '!re'
+---> '=name=10'
+---> '=.id=*9'
+---> EOS
+---> '!done'
+---> EOS
+/home/box/service/models.py changed, reloading.
+Watching for file changes with StatReloader

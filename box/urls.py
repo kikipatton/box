@@ -26,5 +26,6 @@ urlpatterns = [
     path('', include("service.urls")),
     path('', include('network.urls')),
     path('tariff/', include('tariff.urls')),
+    path('billing/', include('billing.urls')),
 ]
 

@@ -31447,3 +31447,4 @@ Traceback (most recent call last):
   File "/home/box/venv/lib/python3.8/site-packages/django/template/base.py", line 478, in parse
     raise self.error(
 django.template.exceptions.TemplateSyntaxError: Empty variable tag on line 522
+Watching for file changes with StatReloader

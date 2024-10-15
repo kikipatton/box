@@ -10,5 +10,5 @@ urlpatterns = [
     path('payments/<int:payment_id>/delete/', views.delete_payment, name='delete_payment'),
     path('clients/<int:client_id>/billing-summary/', views.client_billing_summary, name='client_billing_summary'),
     path('invoices/<int:invoice_id>/mark-as-paid/', views.mark_invoice_as_paid, name='mark_invoice_as_paid'),
-    path('api/process-due-invoices/', views.process_due_invoices_api, name='process_due_invoices_api'),
+    path('generate-due-invoices/', views.generate_due_invoices, name='generate_due_invoices'),
 ]

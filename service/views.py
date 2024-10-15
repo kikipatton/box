@@ -11,6 +11,27 @@ from tariff.models import Tariff
 from .models import PPPoEService
 from .forms import PPPoEServiceForm
 from django.core.exceptions import ValidationError
+from django.http import JsonResponse
+from django.views.decorators.http import require_GET
+from django.views.decorators.csrf import csrf_exempt
+
+@csrf_exempt
+@require_GET
+def update_overdue_services(request):
+    try:
+        updated_count, errors = PPPoEService.check_and_update_overdue_services()
+        print(f"Attempting to delete overdue")
+        return JsonResponse({
+            'status': 'success',
+            'message': f'Successfully processed overdue services.',
+            'updated_count': updated_count,
+            'errors': errors
+        })
+    except Exception as e:
+        return JsonResponse({
+            'status': 'error',
+            'message': f'An error occurred while processing overdue services: {str(e)}'
+        }, status=500)
 
 class ClientDetailPPPoEView(DetailView):
     model = Client

@@ -1,4 +1,4 @@
-from django.db import models
+from django.db import models, transaction
 from django.core.exceptions import ValidationError
 from django.utils import timezone
 from client.models import Client
@@ -9,6 +9,7 @@ from librouteros.login import token
 import traceback
 from librouteros.exceptions import TrapError
 from billing.models import Invoice
+
 
 class PPPoEService(models.Model):
     client = models.OneToOneField(Client, on_delete=models.CASCADE, related_name='pppoe_service')
@@ -49,6 +50,7 @@ class PPPoEService(models.Model):
 
     def update_or_create_in_mikrotik(self):
         print(f"Updating or creating in Mikrotik for username: {self.username}")
+        
         try:
             api = connect(
                 host=self.router.ip_address,
@@ -82,7 +84,7 @@ class PPPoEService(models.Model):
                     name=self.username,
                     password=self.password,
                     service='pppoe',
-                    profile=self.ip_pool.name,
+                    profile=self.tariff.name,
                 )
                 print(f"Raw response from add operation: {new_secret}")
                 
@@ -115,6 +117,13 @@ class PPPoEService(models.Model):
                 verified_secret = ppp_secret.select('name', '.id').where('.id', self.mikrotik_secret_id)
                 if list(verified_secret):
                     print(f"Verified: PPPoE secret exists with ID: {self.mikrotik_secret_id}")
+                    # Update the related Client model's status to 'Active'
+                    if hasattr(self, 'client'):
+                        self.client.status = 'Active'
+                        self.client.save()
+                        print(f"Updated client status to Active for client: {self.client}")
+                    else:
+                        print("No related client found to update status")
                 else:
                     print(f"Verification failed: PPPoE secret not found with ID: {self.mikrotik_secret_id}")
                     return False
@@ -130,6 +139,93 @@ class PPPoEService(models.Model):
             print("Traceback:")
             print(traceback.format_exc())
             return False
+        
+    def deactivate_in_mikrotik(self):
+        print(f"Deactivating in mikrotik for username: {self.username}")
+        try:
+            api = connect(
+                host=self.router.ip_address,
+                username=self.router.username,
+                password=self.router.password,
+                port=self.router.api_port,
+            )
+            print("Successfully connected to RouterOS")
+            
+            ppp_secret = api.path('ppp', 'secret')
+            
+            # Delete existing secret if we have an ID
+            if self.mikrotik_secret_id:
+                print(f"Attempting to delete existing secret with ID: {self.mikrotik_secret_id}")
+                try:
+                    ppp_secret.remove(self.mikrotik_secret_id)
+                    print(f"Deleted existing secret with ID: {self.mikrotik_secret_id}")
+                    self.mikrotik_secret_id = self.mikrotik_secret_id  # save the ID after deletion
+                except TrapError as trap_error:
+                    if "no such item" in str(trap_error).lower():
+                        print(f"Secret with ID {self.mikrotik_secret_id} not found. It may have been deleted already.")
+                    else:
+                        print(f"Error deleting secret with ID {self.mikrotik_secret_id}: {str(trap_error)}")
+                except Exception as delete_error:
+                    print(f"Unexpected error deleting secret with ID {self.mikrotik_secret_id}: {str(delete_error)}")
+
+            api.close()
+            print("Closed connection to RouterOS")
+            return True
+        except Exception as e:
+            print(f"Error updating/creating PPPoE service in Mikrotik: {str(e)}")
+            print("Traceback:")
+            print(traceback.format_exc())
+            return False
+        
+    @classmethod
+    def check_and_update_overdue_services(cls):
+        current_time = timezone.now()
+        print(f"Starting overdue services check at {current_time}")
+
+        all_clients = Client.objects.select_related('pppoe_service').all()
+        
+        print(f"Found {all_clients.count()} total clients to check")
+
+        updated_count = 0
+        errors = []
+
+        for client in all_clients:
+            print(f"Checking client {client.pk}")
+            try:
+                service = client.pppoe_service
+                if service and (service.next_billing_date is None or service.next_billing_date < current_time):
+                    print(f"Client {client.pk} has overdue service")
+                    with transaction.atomic():
+                        # Update client status
+                        print(f"Before status change: Client {client.pk} status is {client.status}")
+                        client.status = 'Blocked'
+                        client.save()
+                        print(f"Updated client {client.pk} status to {client.status}")
+
+                        # Delete service from Mikrotik
+                        mikrotik_success = service.deactivate_in_mikrotik()
+                        
+                        if not mikrotik_success:
+                            raise Exception(f"Failed to delete service from Mikrotik for client {client.pk}")
+
+                        # Update the next_billing_date if it was null
+                        if service.next_billing_date is None:
+                            service.next_billing_date = current_time
+                            service.save()
+                            print(f"Updated null next_billing_date for service {service.id}")
+
+                        updated_count += 1
+                        print(f"Successfully blocked client {client.pk} and deleted their service from Mikrotik")
+                else:
+                    print(f"Client {client.id} service is not overdue or doesn't exist")
+
+            except Exception as e:
+                error_message = f"Error processing client {client.pk}: {str(e)}"
+                print(error_message)
+                errors.append(error_message)
+
+        print(f"Finished processing. Updated {updated_count} clients with {len(errors)} errors")
+        return updated_count, errors
 
     def delete_from_mikrotik(self):
         print("Deleting from Mikrotik...")
@@ -178,12 +274,11 @@ class PPPoEService(models.Model):
         return f"{self.client} - {self.username}"
 
     def activate(self):
-        self.is_active = True
         self.save()
         self.update_or_create_in_mikrotik()
+        self.update_next_billing_date()
 
     def deactivate(self):
-        self.is_active = False
         self.save()
         self.update_or_create_in_mikrotik()
 

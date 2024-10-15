@@ -15,24 +15,33 @@ from .forms import InvoiceForm, PaymentForm
 from .forms import InvoiceForm
 
 
-@csrf_exempt
 @require_GET
-def process_due_invoices_api(request):
-    try:
-        processed_count = 0
-        for service in PPPoEService.objects.filter(is_active=True, next_billing_date__lte=timezone.now()):
-            service.generate_next_invoice()
-            processed_count += 1
-        
-        return JsonResponse({
-            'status': 'success',
-            'message': f'Processed {processed_count} due invoices',
-        })
-    except Exception as e:
-        return JsonResponse({
-            'status': 'error',
-            'message': str(e),
-        }, status=500)
+def generate_due_invoices(request):
+    today = timezone.now().date()
+    all_services = PPPoEService.objects.all()
+    
+    invoices_created = 0
+    errors = []
+
+    for service in all_services:
+        try:
+            if service.next_billing_date and service.next_billing_date.date() == today:
+                Invoice.objects.create(
+                    client=service.client,
+                    tariff=service.tariff,
+                    amount=service.tariff.price,
+                    due_date=today + timezone.timedelta(days=1)
+                )
+                invoices_created += 1
+        except Exception as e:
+            errors.append(f"Error creating invoice for service {service.id}: {str(e)}")
+
+    response_data = {
+        "invoices_created": invoices_created,
+        "errors": errors
+    }
+
+    return JsonResponse(response_data)
         
 # Invoice Views
 class InvoiceListView(LoginRequiredMixin, ListView):

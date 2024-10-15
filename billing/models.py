@@ -62,12 +62,16 @@ class Payment(models.Model):
                 service = self.client.pppoe_service
                 if service:
                     service.activate()
-                    service.update_next_billing_date(from_date=self.payment_date)
+                
+                # Break after paying one invoice
+                break
             else:
+                # If payment amount is less than invoice amount, don't pay and break the loop
                 break
 
-        if remaining_amount > 0:
-            self.client.update_balance(remaining_amount)
-
+        # If no invoice was paid, update the client's balance with the full payment amount
         if self.invoice is None:
             self.client.update_balance(self.amount)
+        # If an invoice was paid and there's remaining amount, update the client's balance
+        elif remaining_amount > 0:
+            self.client.update_balance(remaining_amount)

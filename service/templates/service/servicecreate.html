@@ -363,13 +363,6 @@
                             <label for="id_city" class="form-label">City</label>
                             <input class="form-control" type="text" value="{{client.city}}" name="city" placeholder="{{client.city}}" />
                           </div>
-                          <div class="mb-4 col-md-6">
-                              <label for="id_status" class="form-label">Status</label>
-                              <select id="id_status" name="status" class="select2 form-select">
-                                  <option value="Active" {% if client.status == 'Active' %}selected{% endif %}>Active</option>
-                                  <option value="Inactive" {% if client.status == 'Inactive' %}selected{% endif %}>Inactive</option>
-                              </select>
-                          </div>
                         </div>
                         <div class=" d-flex justify-content-center">
                           <button type="submit" class="btn btn-primary me-3">Save changes</button>
@@ -499,14 +492,6 @@
                             <select id="id_router" name="router" class="form-control" data-allow-clear="true">
                                 {% for router in routers %}
                                     <option value="{{ router.pk }}" {% if pppoe_service and pppoe_service.router.pk == router.pk %}selected{% endif %}>{{ router.name }}</option>
-                                {% endfor %}
-                            </select>
-                        </div>
-                        <div class="col-12 col-md-12">
-                            <label class="form-label" for="id_ip_pool">IP Pool</label>
-                            <select id="id_ip_pool" name="ip_pool" class="form-control" data-allow-clear="true">
-                                {% for pool in ip_pools %}
-                                    <option value="{{ pool.pk }}" {% if pppoe_service and pppoe_service.ip_pool.pk == pool.pk %}selected{% endif %}>{{ pool.name }}</option>
                                 {% endfor %}
                             </select>
                         </div>

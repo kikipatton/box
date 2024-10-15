@@ -6,6 +6,7 @@ class Client(models.Model):
     STATUS_CHOICES = [
         ('Active', 'Active'),
         ('Inactive', 'Inactive'),
+        ('Blocked', 'Blocked')
     ]
     
     account_number = models.AutoField(primary_key=True)
@@ -17,7 +18,7 @@ class Client(models.Model):
     address = models.TextField(blank=True)
     city = models.CharField(max_length=100, blank=True)
     balance = models.DecimalField(max_digits=10, decimal_places=2, default=0)
-    status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='Inactive')
+    status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='Active')
     created_by = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     created_at = models.DateTimeField(default=timezone.now)
     

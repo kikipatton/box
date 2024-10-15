@@ -114,8 +114,8 @@ def delete_payment(request, payment_id):
 # Additional useful views
 
 @login_required
-def client_billing_summary(request, client_id):
-    client = get_object_or_404(Client, id=client_id)
+def client_billing_summary(request, pk):
+    client = get_object_or_404(Client, pk=pk)
     invoices = Invoice.objects.filter(client=client).order_by('-created_at')
     payments = Payment.objects.filter(client=client).order_by('-payment_date')
     

@@ -379,31 +379,19 @@
                         <span class="badge bg-label-primary">{{ pppoe_service.tariff.name }}</span>
                         <div class="d-flex justify-content-center">
                           <sub class="h5 pricing-currency mb-auto mt-1 text-primary">Ksh</sub>
-                          <h1 class="mb-0 text-primary">{{ pppoe_service.tariff.price }}</h1>
-                          <sub class="h6 pricing-duration mt-auto mb-3 fw-normal">month</sub>
+                          <h1 class="mb-0 text-primary">{{ client.balance }}</h1>
+                          <sub class="h6 pricing-duration mt-auto mb-3 fw-normal">Balance</sub>
                         </div>
                       </div>
                       <ul class="list-unstyled g-2 my-6">
                         <li class="mb-2 d-flex align-items-center">
-                          <i class="ti ti-circle-filled ti-10px text-secondary me-2"></i><span>Balance: {{ client.balance }}</span>
+                          <i class="ti ti-circle-filled ti-10px text-secondary me-2"></i><span>Price: {{ pppoe_service.tariff.price }}</span>
                         </li>
-                        <li class="mb-2 d-flex align-items-center">
-                          <i class="ti ti-circle-filled ti-10px text-secondary me-2"></i
-                          ><span>Up to 10 GB storage</span>
-                        </li>
-                        <li class="mb-2 d-flex align-items-center">
-                          <i class="ti ti-circle-filled ti-10px text-secondary me-2"></i><span>Basic Support</span>
-                        </li>
-                      </ul>
-                      <div class="d-flex justify-content-between align-items-center mb-1">
-                        <span class="h6 mb-0">Days</span>
-                        <span class="h6 mb-0">26 of 30 Days</span>
-                      </div>
                       <div class="progress mb-1 bg-label-primary" style="height: 6px">
                         <div
                           class="progress-bar"
                           role="progressbar"
-                          style="width: 65%"
+                          style="width: 0%"
                           aria-valuenow="65"
                           aria-valuemin="0"
                           aria-valuemax="100"></div>
@@ -428,6 +416,11 @@
                       <li class="nav-item">
                         <a class="nav-link" href="{% url 'clientview' pk=client.pk %}"
                           ><i class="ti ti-user-check ti-sm me-1_5"></i>Account</a
+                        >
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="{% url 'client_billing_summary' pk=client.pk %}"
+                        ><i class="ti ti-user-check ti-sm me-1_5"></i>Billing</a
                         >
                       </li>
                       <li class="nav-item">

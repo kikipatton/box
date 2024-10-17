@@ -1,15 +1,16 @@
-from django.urls import reverse
-from django.views.generic import CreateView, ListView, DetailView
+from django.urls import reverse, reverse_lazy
+from django.views.generic import CreateView, ListView, DetailView, UpdateView
 # Create your views here.
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
 from django.shortcuts import redirect
 from django.utils import timezone
 from .models import Client
-from .forms import ClientForm
+from .forms import ClientForm, MpesaConfigForm
 from django.db.models import Count, Q
 from django.http import JsonResponse
 from django.contrib.auth.decorators import login_required
+from .models import MpesaConfig
 
 
 class ListView(LoginRequiredMixin, ListView):
@@ -94,3 +95,17 @@ def client_list_json(request):
     'account_number', 'first_name', 'phone_number', 'email', 'status' , 'address'
 )
     return JsonResponse(list(clients), safe=False)
+
+
+class MpesaConfigUpdateView(UpdateView):
+    model = MpesaConfig
+    form_class = MpesaConfigForm
+    template_name = 'client/mpesa_config_form.html'
+    success_url = reverse_lazy('mpesa_config_update')
+
+    def get_object(self, queryset=None):
+        return MpesaConfig.objects.first()
+
+    def form_valid(self, form):
+        messages.success(self.request, 'M-Pesa configuration updated successfully.')
+        return super().form_valid(form)

@@ -31,3 +31,15 @@ class Client(models.Model):
 
     class Meta:
         ordering = ['-created_at']
+        
+class MpesaConfig(models.Model):
+    id = models.BigAutoField(primary_key=True)
+    name = models.CharField(max_length=100)
+    environment = models.CharField(max_length=20, choices=[('sandbox', 'Sandbox'), ('production', 'Production')])
+    consumer_key = models.CharField(max_length=255)
+    consumer_secret = models.CharField(max_length=255)
+    shortcode = models.CharField(max_length=20)
+    passkey = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.name

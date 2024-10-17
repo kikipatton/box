@@ -1,5 +1,5 @@
 from django import forms
-from .models import Client
+from .models import Client, MpesaConfig
 
 class ClientForm(forms.ModelForm):
     class Meta:
@@ -16,3 +16,12 @@ class ClientForm(forms.ModelForm):
         self.fields['first_name'].required = True
         self.fields['last_name'].required = True
         self.fields['phone_number'].required = True
+
+class MpesaConfigForm(forms.ModelForm):
+    class Meta:
+        model = MpesaConfig
+        fields = ['name', 'environment', 'consumer_key', 'consumer_secret', 'shortcode', 'passkey']
+        widgets = {
+            'consumer_secret': forms.PasswordInput(),
+            'passkey': forms.PasswordInput(),
+        }

@@ -15,6 +15,7 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Add this near the top of your settings.py, after the BASE_DIR definition
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
@@ -33,7 +34,7 @@ SECRET_KEY = '(ln^!_-@@!8lyvw!=d78)7)@u(qvxlw2yrx0sjf@$c+1uf5$uv'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.100.150', 'localhost', '127.0.0.1', 'cdec-102-217-4-113.ngrok-free.app']
+ALLOWED_HOSTS = ['192.168.100.150', 'localhost', '127.0.0.1', 'b955-102-217-4-113.ngrok-free.app']
 CSRF_TRUSTED_ORIGINS = ['https://*.ngrok-free.app']
 
 # Application definition
@@ -50,6 +51,7 @@ INSTALLED_APPS = [
     'network.apps.NetworkConfig',
     'tariff.apps.TariffConfig',
     'billing.apps.BillingConfig',
+    'django_daraja',
 ]
 
 MIDDLEWARE = [

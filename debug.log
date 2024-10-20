@@ -31755,3 +31755,433 @@ Traceback (most recent call last):
 django.template.exceptions.TemplateDoesNotExist: mpesa_config_form.html
 /home/box/client/views.py changed, reloading.
 Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Method Not Allowed (GET): /mpesa/callback/
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+<--- '/login'
+<--- '=name=neebox'
+<--- '=password=neebox2024!#'
+<--- EOS
+---> '!done'
+---> EOS
+<--- '/ppp/secret/remove'
+<--- '=.id=*2A'
+<--- EOS
+---> '!trap'
+---> '=message=no such item (4)'
+---> EOS
+---> '!done'
+---> EOS
+<--- '/login'
+<--- '=name=neebox'
+<--- '=password=neebox2024!#'
+<--- EOS
+---> '!done'
+---> EOS
+<--- '/ppp/secret/remove'
+<--- '=.id=*15'
+<--- EOS
+---> '!trap'
+---> '=message=no such item (4)'
+---> EOS
+---> '!done'
+---> EOS
+<--- '/login'
+<--- '=name=neebox'
+<--- '=password=neebox2024!#'
+<--- EOS
+---> '!done'
+---> EOS
+<--- '/ppp/secret/remove'
+<--- '=.id=*1F'
+<--- EOS
+---> '!trap'
+---> '=message=no such item (4)'
+---> EOS
+---> '!done'
+---> EOS
+<--- '/login'
+<--- '=name=neebox'
+<--- '=password=neebox2024!#'
+<--- EOS
+---> '!done'
+---> EOS
+<--- '/ppp/secret/remove'
+<--- '=.id=*19'
+<--- EOS
+---> '!trap'
+---> '=message=no such item (4)'
+---> EOS
+---> '!done'
+---> EOS
+<--- '/login'
+<--- '=name=neebox'
+<--- '=password=neebox2024!#'
+<--- EOS
+---> '!done'
+---> EOS
+<--- '/ppp/secret/remove'
+<--- '=.id=*2A'
+<--- EOS
+---> '!trap'
+---> '=message=no such item (4)'
+---> EOS
+---> '!done'
+---> EOS
+<--- '/login'
+<--- '=name=neebox'
+<--- '=password=neebox2024!#'
+<--- EOS
+---> '!done'
+---> EOS
+<--- '/ppp/secret/remove'
+<--- '=.id=*15'
+<--- EOS
+---> '!trap'
+---> '=message=no such item (4)'
+---> EOS
+---> '!done'
+---> EOS
+<--- '/login'
+<--- '=name=neebox'
+<--- '=password=neebox2024!#'
+<--- EOS
+---> '!done'
+---> EOS
+<--- '/ppp/secret/remove'
+<--- '=.id=*1F'
+<--- EOS
+---> '!trap'
+---> '=message=no such item (4)'
+---> EOS
+---> '!done'
+---> EOS
+<--- '/login'
+<--- '=name=neebox'
+<--- '=password=neebox2024!#'
+<--- EOS
+---> '!done'
+---> EOS
+<--- '/ppp/secret/remove'
+<--- '=.id=*19'
+<--- EOS
+---> '!trap'
+---> '=message=no such item (4)'
+---> EOS
+---> '!done'
+---> EOS
+Watching for file changes with StatReloader
+Invalid HTTP_HOST header: 'b955-102-217-4-113.ngrok-free.app'. You may need to add 'b955-102-217-4-113.ngrok-free.app' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/box/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/box/venv/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/home/box/venv/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/box/venv/lib/python3.8/site-packages/django/http/request.py", line 150, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'b955-102-217-4-113.ngrok-free.app'. You may need to add 'b955-102-217-4-113.ngrok-free.app' to ALLOWED_HOSTS.
+Bad Request: /
+Invalid HTTP_HOST header: 'b955-102-217-4-113.ngrok-free.app'. You may need to add 'b955-102-217-4-113.ngrok-free.app' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/box/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/box/venv/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/home/box/venv/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/box/venv/lib/python3.8/site-packages/django/http/request.py", line 150, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'b955-102-217-4-113.ngrok-free.app'. You may need to add 'b955-102-217-4-113.ngrok-free.app' to ALLOWED_HOSTS.
+Bad Request: /favicon.ico
+/home/box/box/settings.py changed, reloading.
+Watching for file changes with StatReloader
+Method Not Allowed (GET): /mpesa/callback/
+Method Not Allowed (GET): /mpesa/callback/
+/home/box/client/urls.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /pay/callback
+Traceback (most recent call last):
+  File "/home/box/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/box/venv/lib/python3.8/site-packages/django/utils/deprecation.py", line 136, in __call__
+    response = self.process_response(request, response)
+  File "/home/box/venv/lib/python3.8/site-packages/django/middleware/common.py", line 108, in process_response
+    return self.response_redirect_class(self.get_full_path_with_slash(request))
+  File "/home/box/venv/lib/python3.8/site-packages/django/middleware/common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to b955-102-217-4-113.ngrok-free.app/pay/callback/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+Internal Server Error: /pay/callback/
+Traceback (most recent call last):
+  File "/home/box/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/box/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/box/venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/box/venv/lib/python3.8/site-packages/django/views/decorators/http.py", line 43, in inner
+    return func(request, *args, **kwargs)
+  File "/home/box/client/views.py", line 120, in mpesa_callback
+    payload = json.loads(request.body)
+  File "/usr/lib/python3.8/json/__init__.py", line 357, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.8/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.8/json/decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+json.decoder.JSONDecodeError: Expecting ',' delimiter: line 6 column 4 (char 130)
+Internal Server Error: /pay/callback/
+Traceback (most recent call last):
+  File "/home/box/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/box/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/box/venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/box/venv/lib/python3.8/site-packages/django/views/decorators/http.py", line 43, in inner
+    return func(request, *args, **kwargs)
+  File "/home/box/client/views.py", line 129, in mpesa_callback
+    client.balance += float(amount)
+TypeError: unsupported operand type(s) for +=: 'decimal.Decimal' and 'float'
+/home/box/client/views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /pay/callback/
+Traceback (most recent call last):
+  File "/home/box/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/box/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/box/venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/box/venv/lib/python3.8/site-packages/django/views/decorators/http.py", line 43, in inner
+    return func(request, *args, **kwargs)
+  File "/home/box/client/views.py", line 129, in mpesa_callback
+    client.balance += amount
+TypeError: unsupported operand type(s) for +=: 'decimal.Decimal' and 'str'
+/home/box/client/views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /pay/callback/
+Traceback (most recent call last):
+  File "/home/box/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/box/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/box/venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/box/venv/lib/python3.8/site-packages/django/views/decorators/http.py", line 43, in inner
+    return func(request, *args, **kwargs)
+  File "/home/box/client/views.py", line 129, in mpesa_callback
+    client.balance += float(amount)
+TypeError: unsupported operand type(s) for +=: 'decimal.Decimal' and 'float'
+/home/box/client/views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /pay/callback/
+Traceback (most recent call last):
+  File "/home/box/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/box/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/box/venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/box/venv/lib/python3.8/site-packages/django/views/decorators/http.py", line 43, in inner
+    return func(request, *args, **kwargs)
+  File "/home/box/client/views.py", line 129, in mpesa_callback
+    client.balance += Decimal(amount)
+NameError: name 'Decimal' is not defined
+/home/box/client/views.py changed, reloading.
+Watching for file changes with StatReloader
+<--- '/login'
+<--- '=name=neebox'
+<--- '=password=neebox2024!#'
+<--- EOS
+---> '!done'
+---> EOS
+<--- '/ppp/secret/remove'
+<--- '=.id=*2A'
+<--- EOS
+---> '!trap'
+---> '=message=no such item (4)'
+---> EOS
+---> '!done'
+---> EOS
+<--- '/ppp/secret/add'
+<--- '=name=14'
+<--- '=password=gseearsg'
+<--- '=service=pppoe'
+<--- '=profile=10 Mbps'
+<--- EOS
+---> '!trap'
+---> '=message=input does not match any value of profile'
+---> EOS
+---> '!done'
+---> EOS
+<--- '/login'
+<--- '=name=neebox'
+<--- '=password=neebox2024!#'
+<--- EOS
+---> '!done'
+---> EOS
+<--- '/ppp/secret/remove'
+<--- '=.id=*2A'
+<--- EOS
+---> '!trap'
+---> '=message=no such item (4)'
+---> EOS
+---> '!done'
+---> EOS
+<--- '/ppp/secret/add'
+<--- '=name=14'
+<--- '=password=gseearsg'
+<--- '=service=pppoe'
+<--- '=profile=20 Mbps'
+<--- EOS
+---> '!done'
+---> '=ret=*5'
+---> EOS
+<--- '/ppp/secret/print'
+<--- '=.proplist=name,.id'
+<--- '.'
+<--- 'i'
+<--- 'd'
+<--- '*'
+<--- '5'
+<--- EOS
+---> '!re'
+---> '=name=Anderson'
+---> '=.id=*1'
+---> EOS
+---> '!re'
+---> '=name=twg'
+---> '=.id=*2'
+---> EOS
+---> '!re'
+---> '=name=15'
+---> '=.id=*4'
+---> EOS
+---> '!re'
+---> '=name=14'
+---> '=.id=*5'
+---> EOS
+---> '!done'
+---> EOS
+Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/box/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/box/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/box/network/views.py", line 12, in home
+    return render(request, 'network/home.html')
+  File "/home/box/venv/lib/python3.8/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/box/venv/lib/python3.8/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/box/venv/lib/python3.8/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: network/home.html
+Not Found: /.well-known/apple-app-site-association
+Not Found: /.well-known/apple-app-site-association
+Not Found: /apple-app-site-association
+Not Found: /apple-app-site-association
+<--- '/login'
+<--- '=name=neebox'
+<--- '=password=neebox2024!#'
+<--- EOS
+---> '!done'
+---> EOS
+<--- '/ppp/secret/remove'
+<--- '=.id=*4'
+<--- EOS
+---> '!done'
+---> EOS
+<--- '/ppp/secret/add'
+<--- '=name=15'
+<--- '=password=wedghcg'
+<--- '=service=pppoe'
+<--- '=profile=20 Mbps'
+<--- EOS
+---> '!done'
+---> '=ret=*6'
+---> EOS
+<--- '/ppp/secret/print'
+<--- '=.proplist=name,.id'
+<--- '.'
+<--- 'i'
+<--- 'd'
+<--- '*'
+<--- '6'
+<--- EOS
+---> '!re'
+---> '=name=Anderson'
+---> '=.id=*1'
+---> EOS
+---> '!re'
+---> '=name=twg'
+---> '=.id=*2'
+---> EOS
+---> '!re'
+---> '=name=14'
+---> '=.id=*5'
+---> EOS
+---> '!re'
+---> '=name=15'
+---> '=.id=*6'
+---> EOS
+---> '!done'
+---> EOS
+<--- '/login'
+<--- '=name=neebox'
+<--- '=password=neebox2024!#'
+<--- EOS
+---> '!done'
+---> EOS
+<--- '/ppp/secret/remove'
+<--- '=.id=*1F'
+<--- EOS
+---> '!trap'
+---> '=message=no such item (4)'
+---> EOS
+---> '!done'
+---> EOS
+<--- '/ppp/secret/add'
+<--- '=name=10'
+<--- '=password=EVAERVR'
+<--- '=service=pppoe'
+<--- '=profile=20 Mbps'
+<--- EOS
+---> '!done'
+---> '=ret=*7'
+---> EOS
+<--- '/ppp/secret/print'
+<--- '=.proplist=name,.id'
+<--- '.'
+<--- 'i'
+<--- 'd'
+<--- '*'
+<--- '7'
+<--- EOS
+---> '!re'
+---> '=name=Anderson'
+---> '=.id=*1'
+---> EOS
+---> '!re'
+---> '=name=twg'
+---> '=.id=*2'
+---> EOS
+---> '!re'
+---> '=name=14'
+---> '=.id=*5'
+---> EOS
+---> '!re'
+---> '=name=15'
+---> '=.id=*6'
+---> EOS
+---> '!re'
+---> '=name=10'
+---> '=.id=*7'
+---> EOS
+---> '!done'
+---> EOS

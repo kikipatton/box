@@ -7,4 +7,5 @@ urlpatterns = [
     path('client/json/', views.client_list_json, name='client_list_json'),
     path('client/<int:pk>/', views.ClientView.as_view(), name='clientview'),
     path('mpesa-config/', views.MpesaConfigUpdateView.as_view(), name='mpesa_config_update'),
+    path('pay/callback/', views.mpesa_callback, name='mpesa_callback'),
 ]

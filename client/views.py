@@ -4,13 +4,17 @@ from django.views.generic import CreateView, ListView, DetailView, UpdateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
 from django.shortcuts import redirect
+from decimal import Decimal
 from django.utils import timezone
 from .models import Client
 from .forms import ClientForm, MpesaConfigForm
 from django.db.models import Count, Q
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 from django.contrib.auth.decorators import login_required
 from .models import MpesaConfig
+from django.views.decorators.csrf import csrf_exempt
+from django.views.decorators.http import require_POST
+import json
 
 
 class ListView(LoginRequiredMixin, ListView):
@@ -109,3 +113,24 @@ class MpesaConfigUpdateView(UpdateView):
     def form_valid(self, form):
         messages.success(self.request, 'M-Pesa configuration updated successfully.')
         return super().form_valid(form)
+    
+@csrf_exempt
+@require_POST
+def mpesa_callback(request):
+    # Parse the JSON payload
+    payload = json.loads(request.body)
+    
+    # Extract relevant information
+    account_number = payload.get('BillRefNumber')
+    amount = payload.get('TransAmount')
+    
+    if account_number and amount:
+        try:
+            client = Client.objects.get(account_number=account_number)
+            client.balance += Decimal(amount)
+            client.save()
+            return HttpResponse("Success")
+        except Client.DoesNotExist:
+            return HttpResponse("Invalid account number", status=400)
+    else:
+        return HttpResponse("Invalid payload", status=400)
